@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UBIK — Robinhood Uniswap</title>
+  <meta name="description" content="UBIK is live on Robinhood Uniswap. Reality is a market. The mind is the order book." />
+  <meta property="og:title" content="UBIK — Robinhood Uniswap" />
+  <meta property="og:description" content="Trade UBIK on Uniswap Robinhood chain. CA: 0xComingsoon" />
+  <meta property="og:image" content="banner.png" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <canvas id="field" class="fx-field" aria-hidden="true"></canvas>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <nav class="nav" id="nav">
+    <a class="nav-brand" href="#top">
+      <span class="nav-logo-wrap">
+        <img src="logo.png" alt="UBIK logo" class="nav-logo" />
+        <span class="logo-ring"></span>
+        <span class="logo-ring delay"></span>
+      </span>
+      <span class="nav-word">ubik</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#how">How to Buy</a>
+      <a href="#join">Join Us</a>
+      <a class="btn btn-buy" href="https://app.uniswap.org/swap?chain=robinhood&inputCurrency=NATIVE&outputCurrency=0xComingSoon" target="_blank" rel="noopener noreferrer">Buy UBIK</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-banner">
+      <img src="banner.png" alt="UBIK banner" class="hero-banner-img" />
+      <div class="hero-banner-shade"></div>
+      <div class="orbit orbit-a"></div>
+      <div class="orbit orbit-b"></div>
+      <div class="orbit orbit-c"></div>
+    </div>
+
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">Robinhood Uniswap</p>
+        <h1 class="hero-title">
+          <span class="gold-shimmer">ubik</span>
+        </h1>
+        <p class="hero-tag">The mind leaks through the order book. A token that should not exist — and yet it does.</p>
+
+        <div class="ca-row">
+          <span class="ca-label">CA</span>
+          <code class="ca-value" id="caValue">0xComingsoon</code>
+          <button class="ca-copy" id="copyCa" type="button">Copy</button>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-buy btn-lg" href="https://app.uniswap.org/swap?chain=robinhood&inputCurrency=NATIVE&outputCurrency=0xComingSoon" target="_blank" rel="noopener noreferrer">Buy on Uniswap</a>
+          <a class="btn btn-ghost btn-lg" href="#join">Join Us</a>
+        </div>
+      </div>
+
+      <div class="hero-brain">
+        <canvas id="brain" class="brain-canvas" aria-hidden="true"></canvas>
+        <div class="brain-core">
+          <img src="logo.png" alt="" class="brain-logo" />
+          <span class="core-pulse"></span>
+          <span class="core-pulse delay"></span>
+          <span class="core-pulse delay-2"></span>
+        </div>
+        <div class="eeg" aria-hidden="true">
+          <svg viewBox="0 0 400 60" preserveAspectRatio="none">
+            <path class="eeg-path" d="M0 30 Q20 30 30 30 T50 12 T70 48 T90 30 T110 30 T130 8 T150 52 T170 30 T200 30 T220 18 T240 42 T260 30 T300 30 T320 10 T340 50 T360 30 T400 30" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>UBIK</span><span>ROBINHOOD UNISWAP</span><span>CA 0xComingsoon</span><span>NEURONS FIRING</span><span>REALITY IS A MARKET</span><span>BUY THE SIGNAL</span>
+      <span>UBIK</span><span>ROBINHOOD UNISWAP</span><span>CA 0xComingsoon</span><span>NEURONS FIRING</span><span>REALITY IS A MARKET</span><span>BUY THE SIGNAL</span>
+    </div>
+  </div>
+
+  <main>
+    <section class="section about" id="about">
+      <div class="section-head reveal">
+        <p class="kicker">About</p>
+        <h2>A spray against entropy.<br />A ticker against the void.</h2>
+        <p class="lede">UBIK is the first thought-form on Robinhood Uniswap. Not a stock. Not a dream. The green flash of a market that learned how to think.</p>
+      </div>
+
+      <div class="about-grid">
+        <article class="card reveal">
+          <div class="card-icon mind"></div>
+          <h3>Mind</h3>
+          <p>Concentric rings. A magenta core. Every trade is a synapse. UBIK treats liquidity like consciousness — it fires, it fades, it returns.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon chain"></div>
+          <h3>Robinhood Chain</h3>
+          <p>Native to Uniswap on Robinhood. Same rails the street already knows. Swap from the chain. No pilgrimage required.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-icon signal"></div>
+          <h3>Signal</h3>
+          <p>When reality thins, UBIK thickens. A token for the ones who can still hear the ticker through the static.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section how" id="how">
+      <div class="section-head reveal">
+        <p class="kicker">How to Buy</p>
+        <h2>Four pulses. Then you are in.</h2>
+      </div>
+
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-num">01</span>
+          <div>
+            <h3>Open a wallet</h3>
+            <p>Use a wallet that speaks EVM. Fund it with native gas on Robinhood chain.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">02</span>
+          <div>
+            <h3>Go to Uniswap</h3>
+            <p>Hit Buy. Uniswap opens on <strong>chain=robinhood</strong> with UBIK as the output.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">03</span>
+          <div>
+            <h3>Confirm the CA</h3>
+            <p>Contract is <code>0xComingsoon</code> until launch. Verify it matches before you sign.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">04</span>
+          <div>
+            <h3>Swap &amp; hold the thought</h3>
+            <p>Trade native for UBIK. The core lights up. You are part of the field.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="how-cta reveal">
+        <a class="btn btn-buy btn-lg" href="https://app.uniswap.org/swap?chain=robinhood&inputCurrency=NATIVE&outputCurrency=0xComingSoon" target="_blank" rel="noopener noreferrer">Buy UBIK now</a>
+      </div>
+    </section>
+
+    <section class="section join" id="join">
+      <div class="join-panel reveal">
+        <div class="join-copy">
+          <p class="kicker">Join Us</p>
+          <h2>Plug into the field.</h2>
+          <p>Announcements, signals, and the next pulse live on X. Follow the mind. Do not lose the thread.</p>
+          <a class="btn btn-buy btn-lg" href="https://x.com/ubik_rh" target="_blank" rel="noopener noreferrer">
+            <svg class="x-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.727-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            Follow @ubik_rh
+          </a>
+        </div>
+        <div class="join-visual">
+          <img src="logo.png" alt="UBIK" class="join-logo" />
+          <div class="join-rays" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-row">
+      <a class="nav-brand" href="#top">
+        <img src="logo.png" alt="" class="nav-logo" />
+        <span class="nav-word">ubik</span>
+      </a>
+      <p>UBIK is a token on Robinhood Uniswap. Not financial advice. DYOR.</p>
+    </div>
+    <p class="footer-ca">CA: 0xComingsoon</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status">Copied</div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
