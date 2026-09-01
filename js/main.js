@@ -1,6 +1,6 @@
 (() => {
-  const BUY = "https://app.uniswap.org/swap?chain=robinhood&inputCurrency=NATIVE&outputCurrency=0xComingSoon";
-  const CA = "0xComingsoon";
+  const BUY = "https://app.uniswap.org/swap?chain=robinhood&inputCurrency=NATIVE&outputCurrency=0xD923f29dCFCbd7121278a384B83EFf9534080Bd8";
+  const CA = "0xD923f29dCFCbd7121278a384B83EFf9534080Bd8";
 
   const nav = document.getElementById("nav");
   const toggle = document.getElementById("navToggle");
