@@ -1,198 +1,1664 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UBIK — Robinhood Uniswap</title>
-  <meta name="description" content="UBIK is live on Robinhood Uniswap. Reality is a market. The mind is the order book." />
-  <meta property="og:title" content="UBIK — Robinhood Uniswap" />
-  <meta property="og:description" content="Trade UBIK on Uniswap Robinhood chain. CA: 0xD923f29dCFCbd7121278a384B83EFf9534080Bd8" />
-  <meta property="og:image" content="banner.png" />
-  <link rel="icon" type="image/png" href="logo.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <div class="grain" aria-hidden="true"></div>
-  <canvas id="field" class="fx-field" aria-hidden="true"></canvas>
-  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
-
-  <nav class="nav" id="nav">
-    <a class="nav-brand" href="#top">
-      <span class="nav-logo-wrap">
-        <img src="logo.png" alt="UBIK logo" class="nav-logo" />
-        <span class="logo-ring"></span>
-        <span class="logo-ring delay"></span>
-      </span>
-      <span class="nav-word">ubik</span>
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span>
-    </button>
-    <div class="nav-links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#how">How to Buy</a>
-      <a href="#join">Join Us</a>
-      <a class="btn btn-buy" href="https://app.uniswap.org/swap?chain=robinhood&inputCurrency=NATIVE&outputCurrency=0xD923f29dCFCbd7121278a384B83EFf9534080Bd8" target="_blank" rel="noopener noreferrer">Buy UBIK</a>
-    </div>
-  </nav>
-
-  <header class="hero" id="top">
-    <div class="hero-banner">
-      <img src="banner.png" alt="UBIK banner" class="hero-banner-img" />
-      <div class="hero-banner-shade"></div>
-      <div class="orbit orbit-a"></div>
-      <div class="orbit orbit-b"></div>
-      <div class="orbit orbit-c"></div>
-    </div>
-
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <p class="kicker">Robinhood Uniswap</p>
-        <h1 class="hero-title">
-          <span class="gold-shimmer">ubik</span>
+<html
+  data-dpl-id="dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe"
+  lang="en"
+  class="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__variable fraunces_c5f41878-module__6OiOuW__variable h-full antialiased"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="preload"
+      href="/_next/static/immutable/media/54fc36028e2bb174-s.p.1h6pn64pmfi2q.woff2"
+      as="font"
+      crossorigin=""
+      type="font/woff2"
+    />
+    <link
+      rel="preload"
+      href="/_next/static/immutable/media/797e433ab948586e-s.p.1v5bejj26fx9h.woff2"
+      as="font"
+      crossorigin=""
+      type="font/woff2"
+    />
+    <link
+      rel="preload"
+      href="/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2"
+      as="font"
+      crossorigin=""
+      type="font/woff2"
+    />
+    <link
+      rel="preload"
+      as="image"
+      imagesrcset="/_next/image?url=%2Fimg%2Fsanctuary_thankyou.jpg&amp;w=384&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 384w, /_next/image?url=%2Fimg%2Fsanctuary_thankyou.jpg&amp;w=640&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 640w, /_next/image?url=%2Fimg%2Fsanctuary_thankyou.jpg&amp;w=750&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 750w, /_next/image?url=%2Fimg%2Fsanctuary_thankyou.jpg&amp;w=828&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 828w, /_next/image?url=%2Fimg%2Fsanctuary_thankyou.jpg&amp;w=1080&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1080w, /_next/image?url=%2Fimg%2Fsanctuary_thankyou.jpg&amp;w=1200&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1200w, /_next/image?url=%2Fimg%2Fsanctuary_thankyou.jpg&amp;w=1920&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1920w, /_next/image?url=%2Fimg%2Fsanctuary_thankyou.jpg&amp;w=2048&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 2048w, /_next/image?url=%2Fimg%2Fsanctuary_thankyou.jpg&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 3840w"
+      imagesizes="(max-width: 1024px) 100vw, 45vw"
+    />
+    <link
+      rel="stylesheet"
+      href="/_next/static/immutable/chunks/1ysr9mbkeuljz.css"
+      data-precedence="next"
+    />
+    <link
+      rel="preload"
+      as="script"
+      fetchPriority="low"
+      href="/_next/static/immutable/chunks/1lu82lmj0y481.js"
+    />
+    <script
+      src="/_next/static/immutable/chunks/3zgr_fhe6lo3s.js"
+      async=""
+    ></script>
+    <script
+      src="/_next/static/immutable/chunks/2gj6sdo-k9_t0.js"
+      async=""
+    ></script>
+    <script
+      src="/_next/static/immutable/chunks/2cy4qse0vg65b.js"
+      async=""
+    ></script>
+    <script
+      src="/_next/static/immutable/chunks/turbopack-3lb9a42j9qtey.js"
+      async=""
+    ></script>
+    <script
+      src="/_next/static/immutable/chunks/2d2n81hep7dzu.js"
+      async=""
+    ></script>
+    <script
+      src="/_next/static/immutable/chunks/0ap9w7o7ihppc.js"
+      async=""
+    ></script>
+    <script
+      src="/_next/static/immutable/chunks/0drqgpn8c67hv.js"
+      async=""
+    ></script>
+    <title>
+      Tigrino: the only known Leopardus tilcayo, Bolivia&#x27;s new cat species
+    </title>
+    <meta
+      name="description"
+      content="The only known cat of Leopardus tilcayo, the first new cat species in 100 years. Raised at La Senda Verde sanctuary, Bolivia. $100K+ donated by the $TIGRINO community, live counter."
+    />
+    <meta
+      name="keywords"
+      content="Tigrino,Tigrino cat,tilcayo,tilcayo cat,Leopardus tilcayo,new cat species,new cat species 2026,first new cat species in 100 years,Bolivia cat species,Yungas tiger cat,La Senda Verde,Senda Verde sanctuary,TIGRINO token,$TIGRINO,Tigrino donations,Robinhood Chain,Uniswap Robinhood"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="googlebot"
+      content="index, follow, max-image-preview:large, max-snippet:-1"
+    />
+    <meta name="category" content="animals" />
+    <link rel="canonical" href="https://tigrino.community" />
+    <meta
+      property="og:title"
+      content="Tigrino: the only known Leopardus tilcayo, Bolivia&#x27;s new cat species"
+    />
+    <meta
+      property="og:description"
+      content="The only known cat of Leopardus tilcayo, the first new cat species in 100 years. Raised at La Senda Verde sanctuary, Bolivia. $100K+ donated by the $TIGRINO community, live counter."
+    />
+    <meta property="og:url" content="https://tigrino.community" />
+    <meta property="og:site_name" content="Tigrino" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      property="og:image"
+      content="https://tigrino.community/img/sanctuary_thankyou.jpg"
+    />
+    <meta property="og:image:width" content="960" />
+    <meta property="og:image:height" content="1280" />
+    <meta
+      property="og:image:alt"
+      content="Tigrino, the only known Leopardus tilcayo, with his keeper at La Senda Verde sanctuary"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@itsTigrino" />
+    <meta name="twitter:creator" content="@itsTigrino" />
+    <meta
+      name="twitter:title"
+      content="Tigrino: the only known Leopardus tilcayo, Bolivia&#x27;s new cat species"
+    />
+    <meta
+      name="twitter:description"
+      content="The only known cat of Leopardus tilcayo, the first new cat species in 100 years. Raised at La Senda Verde sanctuary, Bolivia. $100K+ donated by the $TIGRINO community, live counter."
+    />
+    <meta
+      name="twitter:image"
+      content="https://tigrino.community/img/sanctuary_thankyou.jpg"
+    />
+    <link
+      rel="icon"
+      href="/favicon.ico?favicon.193b6ddz3zouh.ico"
+      sizes="64x64"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="/icon.png?icon.41mxgn1zej1t2.png"
+      sizes="512x512"
+      type="image/png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/apple-icon.png?apple-icon.3l-_bs--3_epn.png"
+      sizes="180x180"
+      type="image/png"
+    />
+    <meta name="next-size-adjust" content="" />
+    <script type="application/ld+json">
+      [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Tigrino",
+          "alternateName": [
+            "Tigrino the cat",
+            "Tigrino Leopardus tilcayo",
+            "tigrino.community"
+          ],
+          "url": "https://tigrino.community",
+          "description": "The only known cat of Leopardus tilcayo, the first new cat species in 100 years. Raised at La Senda Verde sanctuary, Bolivia. $100K+ donated by the $TIGRINO community, live counter.",
+          "sameAs": [
+            "https://x.com/itsTigrino",
+            "https://www.tiktok.com/@itstigrino",
+            "https://x.com/i/communities/2032558599948419404"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Tigrino: the only known Leopardus tilcayo and the $100,000 his sanctuary received in 48 hours",
+          "description": "The only known cat of Leopardus tilcayo, the first new cat species in 100 years. Raised at La Senda Verde sanctuary, Bolivia. $100K+ donated by the $TIGRINO community, live counter.",
+          "image": [
+            "https://tigrino.community/img/sanctuary_thankyou.jpg",
+            "https://tigrino.community/gallery/04.webp"
+          ],
+          "datePublished": "2026-09-19T00:00:00Z",
+          "dateModified": "2026-09-20T15:16:24.902Z",
+          "author": {
+            "@type": "Organization",
+            "name": "Tigrino community",
+            "url": "https://tigrino.community"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Tigrino community",
+            "url": "https://tigrino.community",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://tigrino.community/gallery/04.webp"
+            }
+          },
+          "mainEntityOfPage": "https://tigrino.community",
+          "about": [
+            {
+              "@type": "Thing",
+              "name": "Leopardus tilcayo",
+              "sameAs": "https://en.wikipedia.org/wiki/Tilcayo_tiger_cat"
+            },
+            {
+              "@type": "Organization",
+              "name": "La Senda Verde Wildlife Sanctuary",
+              "url": "https://sendaverde.org"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Who is Tigrino?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tigrino is a male wild cat, about 10 years old and 3 lbs (1.4 kg), living at La Senda Verde Wildlife Sanctuary in Bolivia's Yungas. He was found as a kitten on a rural road in 2016, mistaken for a house cat, and brought to the sanctuary in 2017. In September 2026 scientists confirmed he belongs to Leopardus tilcayo, a species never described before. He is the only known individual."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is Leopardus tilcayo?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Leopardus tilcayo is a small wild tiger cat species from Bolivia's Yungas cloud forest, formally described on September 17, 2026 in the journal Current Biology and announced by National Geographic. It is the first new living cat species named in over 100 years, since the pampas cat in 1923. It split from other tiger cats about 1.4 million years ago."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the difference between Tigrino and tilcayo?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tigrino is the name of the individual cat, given by La Senda Verde sanctuary staff in 2017. Tilcayo (Leopardus tilcayo) is the species name, taken from the word local Yungas communities use for the animal."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much money has been donated to Tigrino's sanctuary?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Over $100,000 was donated to La Senda Verde Animal Refuge Inc, the sanctuary's US 501(c)(3), within 48 hours of the species announcement. The funds come from $TIGRINO, a community token on Robinhood Chain whose creator fees are locked 100% to the sanctuary via donate.gg. Every donation is public on donate.gg and the sanctuary confirmed receipt on X."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is $TIGRINO?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "$TIGRINO is a community-run memecoin on Robinhood Chain, tradeable on Uniswap as of September 18, 2026. 100% of its creator fees are locked on-chain to La Senda Verde Animal Refuge Inc; the creator receives 0% and holds no tokens. It has no team, no roadmap, and no affiliation with National Geographic or the study authors."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where does Tigrino live?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tigrino lives at La Senda Verde Wildlife Sanctuary near Coroico in Bolivia's Yungas region, a rescue that cares for more than 1,000 animals recovered from wildlife trafficking. The sanctuary posts updates about him at @La_Senda_Verde on X."
+              }
+            }
+          ]
+        }
+      ]
+    </script>
+    <script
+      src="/_next/static/immutable/chunks/0c0hxoamwjsbw.js"
+      nomodule=""
+    ></script>
+  </head>
+  <body class="min-h-full flex flex-col">
+    <div hidden=""><!--$--><!--/$--></div>
+    <main class="flex-1">
+      <header
+        class="sticky top-0 z-30 border-b border-white/5 bg-background/85 backdrop-blur"
+      >
+        <nav
+          class="mx-auto flex max-w-5xl items-center justify-between gap-3 px-5 py-3 text-sm"
+        >
+          <a class="serif text-lg font-semibold text-sand" href="/"
+            >Tigrino <span aria-hidden="true" class="ml-1">😾</span></a
+          >
+          <div class="hidden gap-7 text-muted md:flex">
+            <a class="hover:text-sand" href="/#story">Story</a
+            ><a class="hover:text-sand" href="/sanctuary">Sanctuary</a
+            ><a class="hover:text-sand" href="/#ledger">Ledger</a
+            ><a class="hover:text-sand" href="/#coin">Coin</a
+            ><a class="hover:text-sand" href="/memes">Memes</a
+            ><a class="hover:text-sand" href="/press">Press</a
+            ><a
+              href="https://x.com/itsTigrino"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-sand"
+              >@itsTigrino</a
+            >
+          </div>
+          <div class="flex items-center gap-2">
+            <a
+              href="https://app.uniswap.org/swap?chain=robinhood&inputCurrency=NATIVE&outputCurrency=0xComingSoon"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded-full bg-amber px-4 py-1.5 font-semibold text-[#1a1408] hover:bg-amber-soft"
+              >$TIGRINO</a
+            >
+            <div class="md:hidden">
+              <button
+                aria-label="Menu"
+                class="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-sand"
+              >
+                <div class="space-y-1.5">
+                  <span class="block h-0.5 w-4 bg-current transition"></span
+                  ><span class="block h-0.5 w-4 bg-current transition"></span
+                  ><span class="block h-0.5 w-4 bg-current transition"></span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <section class="mx-auto max-w-5xl px-5 pb-16 pt-10 sm:pt-16">
+        <div
+          class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2"
+        >
+          <span
+            class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+            >Field guide · Specimen 001 · Yungas, Bolivia</span
+          ><span
+            class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+            >First new cat species in 103 years</span
+          >
+        </div>
+        <h1
+          class="serif mt-6 text-[19vw] font-medium leading-[0.85] tracking-tight text-sand sm:text-[11rem] lg:text-[13rem]"
+        >
+          Tigrino<span class="text-amber">.</span>
         </h1>
-        <p class="hero-tag">The mind leaks through the order book. A token that should not exist — and yet it does.</p>
-
-        <div class="ca-row">
-          <span class="ca-label">CA</span>
-          <code class="ca-value" id="caValue">0xD923f29dCFCbd7121278a384B83EFf9534080Bd8</code>
-          <button class="ca-copy" id="copyCa" type="button">Copy</button>
-        </div>
-
-        <div class="hero-actions">
-          <a class="btn btn-buy btn-lg" href="https://app.uniswap.org/swap?chain=robinhood&inputCurrency=NATIVE&outputCurrency=0xD923f29dCFCbd7121278a384B83EFf9534080Bd8" target="_blank" rel="noopener noreferrer">Buy on Uniswap</a>
-          <a class="btn btn-ghost btn-lg" href="#join">Join Us</a>
-        </div>
-      </div>
-
-      <div class="hero-brain">
-        <canvas id="brain" class="brain-canvas" aria-hidden="true"></canvas>
-        <div class="brain-core">
-          <img src="logo.png" alt="" class="brain-logo" />
-          <span class="core-pulse"></span>
-          <span class="core-pulse delay"></span>
-          <span class="core-pulse delay-2"></span>
-        </div>
-        <div class="eeg" aria-hidden="true">
-          <svg viewBox="0 0 400 60" preserveAspectRatio="none">
-            <path class="eeg-path" d="M0 30 Q20 30 30 30 T50 12 T70 48 T90 30 T110 30 T130 8 T150 52 T170 30 T200 30 T220 18 T240 42 T260 30 T300 30 T320 10 T340 50 T360 30 T400 30" />
-          </svg>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <span>UBIK</span><span>ROBINHOOD UNISWAP</span><span>CA 0xD923f29dCFCbd7121278a384B83EFf9534080Bd8</span><span>NEURONS FIRING</span><span>REALITY IS A MARKET</span><span>BUY THE SIGNAL</span>
-      <span>UBIK</span><span>ROBINHOOD UNISWAP</span><span>CA 0xD923f29dCFCbd7121278a384B83EFf9534080Bd8</span><span>NEURONS FIRING</span><span>REALITY IS A MARKET</span><span>BUY THE SIGNAL</span>
-    </div>
-  </div>
-
-  <main>
-    <section class="section about" id="about">
-      <div class="section-head reveal">
-        <p class="kicker">About</p>
-        <h2>A spray against entropy.<br />A ticker against the void.</h2>
-        <p class="lede">UBIK is the first thought-form on Robinhood Uniswap. Not a stock. Not a dream. The green flash of a market that learned how to think.</p>
-      </div>
-
-      <div class="about-grid">
-        <article class="card reveal">
-          <div class="card-icon mind"></div>
-          <h3>Mind</h3>
-          <p>Concentric rings. A magenta core. Every trade is a synapse. UBIK treats liquidity like consciousness — it fires, it fades, it returns.</p>
-        </article>
-        <article class="card reveal">
-          <div class="card-icon chain"></div>
-          <h3>Robinhood Chain</h3>
-          <p>Native to Uniswap on Robinhood. Same rails the street already knows. Swap from the chain. No pilgrimage required.</p>
-        </article>
-        <article class="card reveal">
-          <div class="card-icon signal"></div>
-          <h3>Signal</h3>
-          <p>When reality thins, UBIK thickens. A token for the ones who can still hear the ticker through the static.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section how" id="how">
-      <div class="section-head reveal">
-        <p class="kicker">How to Buy</p>
-        <h2>Four pulses. Then you are in.</h2>
-      </div>
-
-      <ol class="steps">
-        <li class="step reveal">
-          <span class="step-num">01</span>
-          <div>
-            <h3>Open a wallet</h3>
-            <p>Use a wallet that speaks EVM. Fund it with native gas on Robinhood chain.</p>
+        <div class="mt-8 grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-end">
+          <div class="lg:pb-2">
+            <p class="serif text-2xl leading-snug text-sand sm:text-3xl">
+              The only known member of a species science found last week. Three
+              pounds. Lives in a Bolivian sanctuary. In the 48 hours after the
+              news broke, strangers sent that sanctuary over $100,000. It feeds
+              him, and the thousand other rescued animals he lives with.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a
+                class="inline-flex items-center justify-center rounded-full bg-amber px-5 py-2.5 text-sm font-semibold text-[#1a1408] transition hover:bg-amber-soft"
+                href="#story"
+                >Read the story</a
+              ><a
+                class="inline-flex items-center justify-center rounded-full border border-sand/25 px-5 py-2.5 text-sm font-semibold text-sand transition hover:border-sand/60 hover:bg-white/5"
+                href="#coin"
+                >I’m here for the coin</a
+              ><a
+                href="https://sendaverde.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center rounded-full border border-sand/25 px-5 py-2.5 text-sm font-semibold text-sand transition hover:border-sand/60 hover:bg-white/5"
+                >Donate directly</a
+              >
+            </div>
           </div>
-        </li>
-        <li class="step reveal">
-          <span class="step-num">02</span>
-          <div>
-            <h3>Go to Uniswap</h3>
-            <p>Hit Buy. Uniswap opens on <strong>chain=robinhood</strong> with UBIK as the output.</p>
-          </div>
-        </li>
-        <li class="step reveal">
-          <span class="step-num">03</span>
-          <div>
-            <h3>Confirm the CA</h3>
-            <p>Contract is <code>0xD923f29dCFCbd7121278a384B83EFf9534080Bd8</code> until launch. Verify it matches before you sign.</p>
-          </div>
-        </li>
-        <li class="step reveal">
-          <span class="step-num">04</span>
-          <div>
-            <h3>Swap &amp; hold the thought</h3>
-            <p>Trade native for UBIK. The core lights up. You are part of the field.</p>
-          </div>
-        </li>
-      </ol>
-
-      <div class="how-cta reveal">
-        <a class="btn btn-buy btn-lg" href="https://app.uniswap.org/swap?chain=robinhood&inputCurrency=NATIVE&outputCurrency=0xD923f29dCFCbd7121278a384B83EFf9534080Bd8" target="_blank" rel="noopener noreferrer">Buy UBIK now</a>
-      </div>
-    </section>
-
-    <section class="section join" id="join">
-      <div class="join-panel reveal">
-        <div class="join-copy">
-          <p class="kicker">Join Us</p>
-          <h2>Plug into the field.</h2>
-          <p>Announcements, signals, and the next pulse live on X. Follow the mind. Do not lose the thread.</p>
-          <a class="btn btn-buy btn-lg" href="https://x.com/ubik_rh" target="_blank" rel="noopener noreferrer">
-            <svg class="x-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.727-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            Follow @ubik_rh
-          </a>
+          <figure class="relative">
+            <video
+              src="/img/tigrino_chill.mp4"
+              autoplay=""
+              muted=""
+              loop=""
+              playsinline=""
+              poster="/gallery/04.webp"
+              class="aspect-[16/10] w-full rounded-2xl border border-white/10 object-cover"
+            ></video>
+            <figcaption class="mt-2 flex justify-between">
+              <span
+                class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+                >Tigrino in his enclosure, 18 Sep 2026</span
+              ><a
+                href="https://x.com/La_Senda_Verde/status/2101075567655399821"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><span
+                  class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted hover:text-sand"
+                  >Video: @La_Senda_Verde ↗</span
+                ></a
+              >
+            </figcaption>
+          </figure>
         </div>
-        <div class="join-visual">
-          <img src="logo.png" alt="UBIK" class="join-logo" />
-          <div class="join-rays" aria-hidden="true"></div>
+        <div
+          class="mt-12 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-sand/15 pt-5"
+        >
+          <span
+            class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+            >Covered by</span
+          ><a
+            href="https://www.nationalgeographic.com/animals/article/meet-the-first-new-cat-species-discovered-in-100-years"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-sand/80 hover:text-sand"
+            >National Geographic</a
+          ><a
+            href="https://www.reuters.com/business/environment/new-cat-species-identified-bolivia-first-over-century-2026-09-17/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-sand/80 hover:text-sand"
+            >Reuters</a
+          ><a
+            href="https://www.nytimes.com/2026/09/18/science/tilcayo-new-cat-species-bolivia.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-sand/80 hover:text-sand"
+            >The New York Times</a
+          ><a
+            href="https://www.bbc.com/news/articles/c6x2zgv9rr4ro"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-sand/80 hover:text-sand"
+            >BBC</a
+          ><a
+            href="https://www.nbcnews.com/science/environment/new-wild-cat-species-identified-rcna598113"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-sand/80 hover:text-sand"
+            >NBC News</a
+          ><a
+            href="https://x.com/ABC/status/2101456972021125260"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-sand/80 hover:text-sand"
+            >ABC News</a
+          ><a class="text-sm text-amber hover:text-amber-soft" href="/press"
+            >+ press kit</a
+          >
         </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-row">
-      <a class="nav-brand" href="#top">
-        <img src="logo.png" alt="" class="nav-logo" />
-        <span class="nav-word">ubik</span>
-      </a>
-      <p>UBIK is a token on Robinhood Uniswap. Not financial advice. DYOR.</p>
-    </div>
-    <p class="footer-ca">CA: 0xD923f29dCFCbd7121278a384B83EFf9534080Bd8</p>
-  </footer>
-
-  <div class="toast" id="toast" role="status">Copied</div>
-
-  <script src="js/main.js"></script>
-</body>
+      </section>
+      <section class="mx-auto max-w-5xl px-5 py-12 sm:py-16">
+        <div class="mb-10 border-t border-sand/15 pt-6 sm:mb-14">
+          <p class="font-mono text-xs uppercase tracking-[0.25em] text-amber">
+            01<!-- -->
+            <span class="text-muted">/</span>
+            <!-- -->The specimen
+          </p>
+          <h2
+            class="serif mt-3 max-w-3xl text-3xl font-medium leading-[1.05] text-sand sm:text-5xl"
+          >
+            Smaller than your cat. Older than our species.
+          </h2>
+          <p
+            class="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg"
+          >
+            Everything below is from the paper, National Geographic, or the
+            sanctuary. Nothing is estimated by us.
+          </p>
+        </div>
+        <div class="grid gap-10 lg:grid-cols-[1fr_1fr]">
+          <dl class="grid grid-cols-2 gap-x-6 gap-y-5">
+            <div class="border-t border-sand/10 pt-3">
+              <dt
+                class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+              >
+                Species
+              </dt>
+              <dd class="serif mt-1 text-xl text-sand">Leopardus tilcayo</dd>
+            </div>
+            <div class="border-t border-sand/10 pt-3">
+              <dt
+                class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+              >
+                Common name
+              </dt>
+              <dd class="serif mt-1 text-xl text-sand">Tilcayo tiger cat</dd>
+            </div>
+            <div class="border-t border-sand/10 pt-3">
+              <dt
+                class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+              >
+                Known individuals
+              </dt>
+              <dd class="serif mt-1 text-xl text-sand">1</dd>
+            </div>
+            <div class="border-t border-sand/10 pt-3">
+              <dt
+                class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+              >
+                Weight
+              </dt>
+              <dd class="serif mt-1 text-xl text-sand">1.4 kg · 3 lb</dd>
+            </div>
+            <div class="border-t border-sand/10 pt-3">
+              <dt
+                class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+              >
+                Length
+              </dt>
+              <dd class="serif mt-1 text-xl text-sand">46 cm · 18 in</dd>
+            </div>
+            <div class="border-t border-sand/10 pt-3">
+              <dt
+                class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+              >
+                Age
+              </dt>
+              <dd class="serif mt-1 text-xl text-sand">≈ 10 years</dd>
+            </div>
+            <div class="border-t border-sand/10 pt-3">
+              <dt
+                class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+              >
+                Range
+              </dt>
+              <dd class="serif mt-1 text-xl text-sand">
+                Yungas cloud forest, Bolivia
+              </dd>
+            </div>
+            <div class="border-t border-sand/10 pt-3">
+              <dt
+                class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+              >
+                Diverged
+              </dt>
+              <dd class="serif mt-1 text-xl text-sand">
+                ≈ 1.4 million years ago
+              </dd>
+            </div>
+            <div class="border-t border-sand/10 pt-3">
+              <dt
+                class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+              >
+                Described
+              </dt>
+              <dd class="serif mt-1 text-xl text-sand">
+                17 Sep 2026, Current Biology
+              </dd>
+            </div>
+            <div class="border-t border-sand/10 pt-3">
+              <dt
+                class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+              >
+                Previous new cat
+              </dt>
+              <dd class="serif mt-1 text-xl text-sand">Pampas cat, 1923</dd>
+            </div>
+          </dl>
+          <figure>
+            <img
+              alt="Tigrino in a tree at La Senda Verde"
+              loading="lazy"
+              width="1200"
+              height="1200"
+              decoding="async"
+              data-nimg="1"
+              class="aspect-square w-full rounded-2xl border border-white/10 object-cover"
+              style="color: transparent"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              srcset="
+                /_next/image?url=%2Fimg%2Ftigrino_real.jpg&amp;w=384&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   384w,
+                /_next/image?url=%2Fimg%2Ftigrino_real.jpg&amp;w=640&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   640w,
+                /_next/image?url=%2Fimg%2Ftigrino_real.jpg&amp;w=750&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   750w,
+                /_next/image?url=%2Fimg%2Ftigrino_real.jpg&amp;w=828&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   828w,
+                /_next/image?url=%2Fimg%2Ftigrino_real.jpg&amp;w=1080&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1080w,
+                /_next/image?url=%2Fimg%2Ftigrino_real.jpg&amp;w=1200&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1200w,
+                /_next/image?url=%2Fimg%2Ftigrino_real.jpg&amp;w=1920&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1920w,
+                /_next/image?url=%2Fimg%2Ftigrino_real.jpg&amp;w=2048&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 2048w,
+                /_next/image?url=%2Fimg%2Ftigrino_real.jpg&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 3840w
+              "
+              src="/_next/image?url=%2Fimg%2Ftigrino_real.jpg&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe"
+            />
+            <figcaption class="mt-2">
+              <span
+                class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+                >Photo: La Senda Verde</span
+              >
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section
+        id="story"
+        class="mx-auto max-w-5xl scroll-mt-16 px-5 py-12 sm:py-16"
+      >
+        <div class="mb-10 border-t border-sand/15 pt-6 sm:mb-14">
+          <p class="font-mono text-xs uppercase tracking-[0.25em] text-amber">
+            02<!-- -->
+            <span class="text-muted">/</span>
+            <!-- -->The story
+          </p>
+          <h2
+            class="serif mt-3 max-w-3xl text-3xl font-medium leading-[1.05] text-sand sm:text-5xl"
+          >
+            Nine years in a sanctuary before anyone knew what he was.
+          </h2>
+        </div>
+        <ol class="relative border-l border-sand/15 pl-6 sm:pl-10">
+          <li class="relative mb-9 last:mb-0">
+            <span
+              class="absolute -left-[1.85rem] top-2 h-2.5 w-2.5 rounded-full bg-amber sm:-left-[2.85rem]"
+            ></span>
+            <p
+              class="font-mono text-[11px] uppercase tracking-[0.2em] text-amber"
+            >
+              2016
+            </p>
+            <p
+              class="serif mt-1 max-w-2xl text-xl leading-snug text-sand sm:text-2xl"
+            >
+              A man finds a kitten on a road in the Yungas and takes it home. He
+              thinks it&#x27;s a house cat.
+            </p>
+          </li>
+          <li class="relative mb-9 last:mb-0">
+            <span
+              class="absolute -left-[1.85rem] top-2 h-2.5 w-2.5 rounded-full bg-amber sm:-left-[2.85rem]"
+            ></span>
+            <p
+              class="font-mono text-[11px] uppercase tracking-[0.2em] text-amber"
+            >
+              2017
+            </p>
+            <p
+              class="serif mt-1 max-w-2xl text-xl leading-snug text-sand sm:text-2xl"
+            >
+              It isn&#x27;t. He brings it to La Senda Verde. Staff assume a
+              common tiger cat and name him Tigrino. A biologist comes to look
+              and takes a hundred photos.
+            </p>
+          </li>
+          <li class="relative mb-9 last:mb-0">
+            <span
+              class="absolute -left-[1.85rem] top-2 h-2.5 w-2.5 rounded-full bg-amber sm:-left-[2.85rem]"
+            ></span>
+            <p
+              class="font-mono text-[11px] uppercase tracking-[0.2em] text-amber"
+            >
+              2019
+            </p>
+            <p
+              class="serif mt-1 max-w-2xl text-xl leading-snug text-sand sm:text-2xl"
+            >
+              Writing a field guide, she notices his spots match nothing from
+              Brazil. “This is so wrong.”
+            </p>
+          </li>
+          <li class="relative mb-9 last:mb-0">
+            <span
+              class="absolute -left-[1.85rem] top-2 h-2.5 w-2.5 rounded-full bg-amber sm:-left-[2.85rem]"
+            ></span>
+            <p
+              class="font-mono text-[11px] uppercase tracking-[0.2em] text-amber"
+            >
+              2020–26
+            </p>
+            <p
+              class="serif mt-1 max-w-2xl text-xl leading-snug text-sand sm:text-2xl"
+            >
+              Thirty-eight genomes across the genus. His line split from every
+              other tiger cat 1.4 million years ago.
+            </p>
+          </li>
+          <li class="relative mb-9 last:mb-0">
+            <span
+              class="absolute -left-[1.85rem] top-2 h-2.5 w-2.5 rounded-full bg-amber sm:-left-[2.85rem]"
+            ></span>
+            <p
+              class="font-mono text-[11px] uppercase tracking-[0.2em] text-amber"
+            >
+              17 Sep 2026
+            </p>
+            <p
+              class="serif mt-1 max-w-2xl text-xl leading-snug text-sand sm:text-2xl"
+            >
+              Leopardus tilcayo is published. First new cat species in 103
+              years. Tigrino is the only one known to exist.
+            </p>
+          </li>
+          <li class="relative mb-9 last:mb-0">
+            <span
+              class="absolute -left-[1.85rem] top-2 h-2.5 w-2.5 rounded-full bg-amber sm:-left-[2.85rem]"
+            ></span>
+            <p
+              class="font-mono text-[11px] uppercase tracking-[0.2em] text-amber"
+            >
+              18 Sep 2026
+            </p>
+            <p
+              class="serif mt-1 max-w-2xl text-xl leading-snug text-sand sm:text-2xl"
+            >
+              $TIGRINO launches with 100% of its creator fees locked to his
+              sanctuary. By evening the sanctuary posts a thank-you.
+            </p>
+          </li>
+          <li class="relative mb-9 last:mb-0">
+            <span
+              class="absolute -left-[1.85rem] top-2 h-2.5 w-2.5 rounded-full bg-amber sm:-left-[2.85rem]"
+            ></span>
+            <p
+              class="font-mono text-[11px] uppercase tracking-[0.2em] text-amber"
+            >
+              19 Sep 2026
+            </p>
+            <p
+              class="serif mt-1 max-w-2xl text-xl leading-snug text-sand sm:text-2xl"
+            >
+              $100,000 crossed. His keeper prints a sign. “Tigrino” trends on X
+              by name.
+            </p>
+          </li>
+        </ol>
+        <div
+          class="mt-12 grid gap-px overflow-hidden rounded-2xl border border-sand/15 bg-sand/15 sm:grid-cols-2"
+        >
+          <div class="bg-background p-6">
+            <span
+              class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+              >His name</span
+            >
+            <p class="serif mt-2 text-4xl text-sand">Tigrino</p>
+            <p class="mt-2 text-sm text-muted">
+              Given by the sanctuary in 2017, years before anyone knew he
+              mattered.
+            </p>
+          </div>
+          <div class="bg-background p-6">
+            <span
+              class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+              >His species</span
+            >
+            <p class="serif mt-2 text-4xl text-sand">Tilcayo</p>
+            <p class="mt-2 text-sm text-muted">
+              From the word Yungas locals have always used. Nobody knows what it
+              means.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="mx-auto max-w-5xl px-5 py-12 sm:py-16">
+        <div class="mb-10 border-t border-sand/15 pt-6 sm:mb-14">
+          <p class="font-mono text-xs uppercase tracking-[0.25em] text-amber">
+            03<!-- -->
+            <span class="text-muted">/</span>
+            <!-- -->The sanctuary
+          </p>
+          <h2
+            class="serif mt-3 max-w-3xl text-3xl font-medium leading-[1.05] text-sand sm:text-5xl"
+          >
+            La Senda Verde. Founded 2003. One thousand rescued animals. One of
+            them is famous now.
+          </h2>
+        </div>
+        
+      </section>
+      <section
+        id="ledger"
+        class="scroll-mt-16 border-y border-sand/15 bg-moss/40"
+      >
+        <div class="mx-auto max-w-5xl px-5 py-14 sm:py-20">
+          <div class="mb-10 border-t border-sand/15 pt-6 sm:mb-14">
+            <p class="font-mono text-xs uppercase tracking-[0.25em] text-amber">
+              04<!-- -->
+              <span class="text-muted">/</span>
+              <!-- -->The ledger
+            </p>
+            <h2
+              class="serif mt-3 max-w-3xl text-3xl font-medium leading-[1.05] text-sand sm:text-5xl"
+            >
+              Every dollar below is a public transaction. It feeds more than one
+              cat.
+            </h2>
+            <p
+              class="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg"
+            >
+              Trading fees from $TIGRINO are locked to the sanctuary’s US
+              charity and settled by donate.gg. It pays for Tigrino’s care and
+              for the 1,000+ animals La Senda Verde has rescued from
+              trafficking. The sanctuary never touches crypto. This number is
+              read live from their ledger.
+            </p>
+          </div>
+          <div>
+            <div class="flex flex-wrap items-baseline justify-between gap-3">
+              <p
+                class="font-mono text-[11px] uppercase tracking-[0.25em] text-amber"
+              >
+                Delivered to La Senda Verde · Tigrino + 1,000 rescued animals
+              </p>
+              <span
+                class="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+                ><span class="relative flex h-2 w-2"
+                  ><span
+                    class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"
+                  ></span
+                  ><span
+                    class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"
+                  ></span></span
+                >live · donate.gg</span
+              >
+            </div>
+            <p
+              class="serif mt-4 text-[17vw] font-medium leading-[0.9] text-sand tabular-nums sm:text-9xl lg:text-[11rem]"
+            >
+              $119,804
+            </p>
+            <dl
+              class="mt-8 grid grid-cols-2 gap-x-6 gap-y-6 border-t border-sand/15 pt-6 sm:grid-cols-4"
+            >
+              <div>
+                <dt
+                  class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+                >
+                  ETH
+                </dt>
+                <dd class="serif mt-1 text-3xl text-sand">1106.0</dd>
+              </div>
+              <div>
+                <dt
+                  class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+                >
+                  Donations
+                </dt>
+                <dd class="serif mt-1 text-3xl text-sand">50</dd>
+              </div>
+              <div>
+                <dt
+                  class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+                >
+                  From $TIGRINO fees
+                </dt>
+                <dd class="serif mt-1 text-3xl text-sand">100%</dd>
+              </div>
+              <div>
+                <dt
+                  class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+                >
+                  Last transfer
+                </dt>
+                <dd class="serif mt-1 text-3xl text-sand">39m ago</dd>
+              </div>
+            </dl>
+            <details class="group mt-6">
+              <summary
+                class="cursor-pointer font-mono text-[11px] uppercase tracking-[0.2em] text-amber hover:text-amber-soft"
+              >
+                Show recent transfers
+              </summary>
+              <ul class="mt-3 divide-y divide-sand/10 text-sm">
+                <li class="flex items-center justify-between gap-3 py-2">
+                  <a
+                    href="https://robinhoodchain.blockscout.com/tx/Npc38ZNHBM5bEkjb9YBfetiYLvnWhUsqZdih2SE1bmEHvsjCXKJe5DNZCSp6GzqQaoE1Gx8EhUPMKP2PrxyTsuC"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="truncate text-muted hover:text-sand"
+                    >$TIGRINO creator fees</a
+                  ><span class="shrink-0 font-mono text-sand"
+                    >56.93<!-- -->
+                    ETH</span
+                  ><span
+                    class="w-16 shrink-0 text-right font-mono text-xs text-muted"
+                    >39m ago</span
+                  >
+                </li>
+                <li class="flex items-center justify-between gap-3 py-2">
+                  <a
+                    href="https://robinhoodchain.blockscout.com/tx/3fx7iW9ZcW6Fuk6zEKWfSwr4sBGhgAzzVWTz4qfQVN5gXgi9gyiTXpFuAJCXgej8tLbxQNXN5iuPrtHgY7EVNHxp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="truncate text-muted hover:text-sand"
+                    >$TIGRINO creator fees</a
+                  ><span class="shrink-0 font-mono text-sand"
+                    >31.05<!-- -->
+                    ETH</span
+                  ><span
+                    class="w-16 shrink-0 text-right font-mono text-xs text-muted"
+                    >12h ago</span
+                  >
+                </li>
+                <li class="flex items-center justify-between gap-3 py-2">
+                  <a
+                    href="https://robinhoodchain.blockscout.com/tx/4771c9jEHx78zrRuJgW2knE4yBcBgZ4xybKtUuq4Rkgv1vK3SyEKp52hxhdUZ7stEWFQ2WkfXDcSPJLUBGtX8znw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="truncate text-muted hover:text-sand"
+                    >Gato-do-Mato</a
+                  ><span class="shrink-0 font-mono text-sand"
+                    >0.00<!-- -->
+                    ETH</span
+                  ><span
+                    class="w-16 shrink-0 text-right font-mono text-xs text-muted"
+                    >15h ago</span
+                  >
+                </li>
+                <li class="flex items-center justify-between gap-3 py-2">
+                  <a
+                    href="https://robinhoodchain.blockscout.com/tx/5vL2rm57oLJCKKJYfRik2UrU68KtWiUC7DCt7umwcCooiT1VfwLCsqBjkA9VbJZxBM56yJ1p39Mwgkzt5kvAE9sa"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="truncate text-muted hover:text-sand"
+                    >$TIGRINO creator fees</a
+                  ><span class="shrink-0 font-mono text-sand"
+                    >15.35<!-- -->
+                    ETH</span
+                  ><span
+                    class="w-16 shrink-0 text-right font-mono text-xs text-muted"
+                    >17h ago</span
+                  >
+                </li>
+                <li class="flex items-center justify-between gap-3 py-2">
+                  <a
+                    href="https://robinhoodchain.blockscout.com/tx/4UTTepcV2KCqKGFvRnmP9uzaFqSw6SLN3NWQvV2DY1ZUSf1XjgjztEUymkLEEPf6QVSzarxZri4qfwcVG7wLH4vi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="truncate text-muted hover:text-sand"
+                    >$TIGRINO creator fees</a
+                  ><span class="shrink-0 font-mono text-sand"
+                    >59.10<!-- -->
+                    ETH</span
+                  ><span
+                    class="w-16 shrink-0 text-right font-mono text-xs text-muted"
+                    >18h ago</span
+                  >
+                </li>
+                <li class="flex items-center justify-between gap-3 py-2">
+                  <a
+                    href="https://robinhoodchain.blockscout.com/tx/2G5gn4SgE6JxAWBXBDZ19yVTTHYZDkKiWUsd6okcC9T67f6ohnvbHaiScvF8ya9BQXTUZRNfUy4xCeipb8vs1H4T"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="truncate text-muted hover:text-sand"
+                    >$TIGRINO creator fees</a
+                  ><span class="shrink-0 font-mono text-sand"
+                    >2.26<!-- -->
+                    ETH</span
+                  ><span
+                    class="w-16 shrink-0 text-right font-mono text-xs text-muted"
+                    >20h ago</span
+                  >
+                </li>
+                <li class="flex items-center justify-between gap-3 py-2">
+                  <a
+                    href="https://robinhoodchain.blockscout.com/tx/4Qx3UuKHPjA9ifBZPWfp3MyQfNt8SxrTVcZ5mvhS7RNsGsaaUaxKYjPK74D38zYA5e7N1Ld1GqdayhtSaenx2ZET"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="truncate text-muted hover:text-sand"
+                    >$TIGRINO creator fees</a
+                  ><span class="shrink-0 font-mono text-sand"
+                    >0.01<!-- -->
+                    ETH</span
+                  ><span
+                    class="w-16 shrink-0 text-right font-mono text-xs text-muted"
+                    >21h ago</span
+                  >
+                </li>
+                <li class="flex items-center justify-between gap-3 py-2">
+                  <a
+                    href="https://robinhoodchain.blockscout.com/tx/pS4RkhB6JdfWE9GCR8tcyduzRPE7o81LzLu4cLBf9BM6bRAEt2g2iYsYrE6yqwVyovzWiCTAr6jD4fBod3anacZ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="truncate text-muted hover:text-sand"
+                    >$TIGRINO creator fees</a
+                  ><span class="shrink-0 font-mono text-sand"
+                    >7.05<!-- -->
+                    ETH</span
+                  ><span
+                    class="w-16 shrink-0 text-right font-mono text-xs text-muted"
+                    >21h ago</span
+                  >
+                </li>
+                <li class="flex items-center justify-between gap-3 py-2">
+                  <a
+                    href="https://robinhoodchain.blockscout.com/tx/26TRBYVxgbAv8rAxM7drBCrCGeevMKQzZiF8NYDY4EUzNwVo3YTQ2KSJJp51Fu4vAioHeD3tWQifJRE2d62AUKX9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="truncate text-muted hover:text-sand"
+                    >$TIGRINO creator fees</a
+                  ><span class="shrink-0 font-mono text-sand"
+                    >0.00<!-- -->
+                    ETH</span
+                  ><span
+                    class="w-16 shrink-0 text-right font-mono text-xs text-muted"
+                    >22h ago</span
+                  >
+                </li>
+                <li class="flex items-center justify-between gap-3 py-2">
+                  <a
+                    href="https://robinhoodchain.blockscout.com/tx/4yGqeFv5WrmKRsMREKHQSvizmZas5Y8ffHSgGwaqA9h4KS8dg1vDFib9eESN5wsG8gBd5BZD4cNj2NHcEqiBMTaD"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="truncate text-muted hover:text-sand"
+                    >$TIGRINO creator fees</a
+                  ><span class="shrink-0 font-mono text-sand"
+                    >6.57<!-- -->
+                    ETH</span
+                  ><span
+                    class="w-16 shrink-0 text-right font-mono text-xs text-muted"
+                    >22h ago</span
+                  >
+                </li>
+                <li class="flex items-center justify-between gap-3 py-2">
+                  <a
+                    href="https://robinhoodchain.blockscout.com/tx/5rvvaptzCb6cisWpknMjMywYAzMWTmpGdyADFinb6aBmsjEhYvbLx1p5JbCxJxAt2SkboK8YwUY4hWwgb1EsL18y"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="truncate text-muted hover:text-sand"
+                    >$TIGRINO creator fees</a
+                  ><span class="shrink-0 font-mono text-sand"
+                    >5.13<!-- -->
+                    ETH</span
+                  ><span
+                    class="w-16 shrink-0 text-right font-mono text-xs text-muted"
+                    >23h ago</span
+                  >
+                </li>
+                <li class="flex items-center justify-between gap-3 py-2">
+                  <a
+                    href="https://robinhoodchain.blockscout.com/tx/oDSGSJak11fDwHQLaXMbrTnQFCkXBK5jSwkTTnkCSPW5HYdsMJGsyUYJhaUFhGvuM16pnLNm8Sy2nWY69AtE2aS"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="truncate text-muted hover:text-sand"
+                    >$TIGRINO creator fees</a
+                  ><span class="shrink-0 font-mono text-sand"
+                    >26.05<!-- -->
+                    ETH</span
+                  ><span
+                    class="w-16 shrink-0 text-right font-mono text-xs text-muted"
+                    >24h ago</span
+                  >
+                </li>
+              </ul>
+            </details>
+          </div>
+          <p class="mt-8 text-sm text-muted">
+            Source:
+            <a
+              class="underline hover:text-sand"
+              href="https://www.donate.gg/charities/la-senda-verde-animal-refuge-inc"
+              target="_blank"
+              rel="noopener noreferrer"
+              >donate.gg · La Senda Verde Animal Refuge Inc</a
+            >
+            · EIN 47-2415812 ·<!-- -->
+            <a
+              class="underline hover:text-sand"
+              href="https://robinhoodchain.blockscout.com/address/AjygC8gewVhtDD36BLjbMaDUPC2VSMsa3gHrXdYYh36M"
+              target="_blank"
+              rel="noopener noreferrer"
+              >fee wallet on Blockscout</a
+            >
+          </p>
+        </div>
+      </section>
+      <section
+        id="coin"
+        class="mx-auto max-w-5xl scroll-mt-16 px-5 py-12 sm:py-16"
+      >
+        <div class="mb-10 border-t border-sand/15 pt-6 sm:mb-14">
+          <p class="font-mono text-xs uppercase tracking-[0.25em] text-amber">
+            05<!-- -->
+            <span class="text-muted">/</span>
+            <!-- -->The coin
+          </p>
+          <h2
+            class="serif mt-3 max-w-3xl text-3xl font-medium leading-[1.05] text-sand sm:text-5xl"
+          >
+            You trade. He eats. Nobody has to be trusted.
+          </h2>
+          <p
+            class="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg"
+          >
+            A memecoin with one unusual property: the person who made it can’t
+            get paid. Fees are routed on-chain to a sanctuary that cares for
+            Tigrino and a thousand other rescued animals, and the route is
+            locked.
+          </p>
+        </div>
+        <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div class="min-w-0">
+            <span
+              class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+              >Contract · Robinhood Chain</span
+            >
+            <div class="mt-2">
+              <button
+                class="group flex w-full items-center justify-between gap-3 rounded-xl border border-amber/30 bg-black/30 px-4 py-3 text-left font-mono text-xs sm:text-sm text-amber-soft hover:border-amber/70 transition"
+                title="Copy contract address"
+              >
+                <span class="min-w-0 flex-1 truncate"
+                  >0xComingSoon</span
+                ><span
+                  class="shrink-0 rounded-md bg-amber/15 px-2 py-1 text-[11px] uppercase tracking-wide text-amber group-hover:bg-amber/25"
+                  >copy</span
+                >
+              </button>
+            </div>
+            <dl class="mt-8 grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4">
+              <div class="border-t border-sand/10 pt-3">
+                <dt
+                  class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+                >
+                  Fee to sanctuary
+                </dt>
+                <dd class="serif mt-1 text-3xl text-sand">100%</dd>
+              </div>
+              <div class="border-t border-sand/10 pt-3">
+                <dt
+                  class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+                >
+                  Creator share
+                </dt>
+                <dd class="serif mt-1 text-3xl text-sand">0%</dd>
+              </div>
+              <div class="border-t border-sand/10 pt-3">
+                <dt
+                  class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+                >
+                  Creator holds
+                </dt>
+                <dd class="serif mt-1 text-3xl text-sand">0</dd>
+              </div>
+              <div class="border-t border-sand/10 pt-3">
+                <dt
+                  class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+                >
+                  Routing
+                </dt>
+                <dd class="serif mt-1 text-3xl text-sand">Locked</dd>
+              </div>
+            </dl>
+            <div class="mt-8 flex flex-wrap gap-2">
+              <a
+                href="https://app.uniswap.org/swap?chain=robinhood&inputCurrency=NATIVE&outputCurrency=0xComingSoon"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center rounded-full bg-amber px-5 py-2.5 text-sm font-semibold text-[#1a1408] transition hover:bg-amber-soft"
+                >Buy on Uniswap</a
+              ><a
+                href="https://dexscreener.com/robinhood/0xComingSoon"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center rounded-full border border-sand/25 px-5 py-2.5 text-sm font-semibold text-sand transition hover:border-sand/60 hover:bg-white/5"
+                >DEX Screener</a
+              ><a
+                href="https://robinhoodchain.blockscout.com/token/0xComingSoon"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center rounded-full border border-sand/25 px-5 py-2.5 text-sm font-semibold text-sand transition hover:border-sand/60 hover:bg-white/5"
+                >Explorer</a
+              ><a
+                href="https://x.com/i/communities/2032558599948419404"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center rounded-full border border-sand/25 px-5 py-2.5 text-sm font-semibold text-sand transition hover:border-sand/60 hover:bg-white/5"
+                >X community</a
+              >
+            </div>
+          </div>
+          <div class="min-w-0 space-y-6 text-sm leading-relaxed text-muted">
+            <div>
+              <span
+                class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+                >How it moves</span
+              >
+              <ol class="mt-3 space-y-2">
+                <li class="flex gap-3">
+                  <span class="font-mono text-amber">1</span
+                  ><span
+                    >You buy or sell. Uniswap charges its usual trading
+                    fee.</span
+                  >
+                </li>
+                <li class="flex gap-3">
+                  <span class="font-mono text-amber">2</span
+                  ><span
+                    >The creator&#x27;s cut is redirected: 100% charity, 0%
+                    creator, locked at launch.</span
+                  >
+                </li>
+                <li class="flex gap-3">
+                  <span class="font-mono text-amber">3</span
+                  ><span
+                    >donate.gg settles it to the sanctuary&#x27;s 501(c)(3) and
+                    publishes each transfer.</span
+                  >
+                </li>
+                <li class="flex gap-3">
+                  <span class="font-mono text-amber">4</span
+                  ><span
+                    >The ledger above updates. The sanctuary needs no wallet and
+                    no sign-up.</span
+                  >
+                </li>
+              </ol>
+            </div>
+            <div class="border-l-2 border-amber pl-4 text-amber-soft">
+              It’s a memecoin. No team, no roadmap, and the price can go to
+              zero. Buy it because the joke is good and the cause is real. If
+              you only want to help the cat,
+              <a
+                class="underline"
+                href="https://sendaverde.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                >give directly</a
+              >.
+            </div>
+            <p>
+              Verify:
+              <a
+                class="underline hover:text-sand"
+                href="https://robinhoodchain.blockscout.com/token/0xComingSoon"
+                target="_blank"
+                rel="noopener noreferrer"
+                >token on Blockscout</a
+              >
+              ·
+              <a
+                class="underline hover:text-sand"
+                href="https://www.donate.gg/charities/la-senda-verde-animal-refuge-inc"
+                target="_blank"
+                rel="noopener noreferrer"
+                >ledger on donate.gg</a
+              >
+              · Community Notes on the mascot’s viral post: “the sanctuary
+              confirmed Tigrino’s story, the new species, and over $100k
+              raised.”
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        id="faq"
+        class="mx-auto max-w-5xl scroll-mt-16 px-5 py-12 sm:py-16"
+      >
+        <div class="mb-10 border-t border-sand/15 pt-6 sm:mb-14">
+          <p class="font-mono text-xs uppercase tracking-[0.25em] text-amber">
+            06<!-- -->
+            <span class="text-muted">/</span>
+            <!-- -->Questions
+          </p>
+          <h2
+            class="serif mt-3 max-w-3xl text-3xl font-medium leading-[1.05] text-sand sm:text-5xl"
+          >
+            Short answers.
+          </h2>
+        </div>
+        <div class="divide-y divide-sand/10 border-y border-sand/15">
+          <details class="group py-4">
+            <summary
+              class="flex cursor-pointer items-center justify-between gap-4 text-left"
+            >
+              <span class="serif text-xl text-sand sm:text-2xl"
+                >Who is Tigrino?</span
+              ><span
+                class="font-mono text-amber transition group-open:rotate-45"
+                >+</span
+              >
+            </summary>
+            <p class="mt-3 max-w-3xl text-base leading-relaxed text-muted">
+              A male wild cat, about 10 years old and 3 lbs, living at La Senda
+              Verde Wildlife Sanctuary in Bolivia&#x27;s Yungas since 2017. In
+              September 2026 scientists confirmed he belongs to Leopardus
+              tilcayo, a species never described before. He is the only known
+              individual.
+            </p>
+          </details>
+          <details class="group py-4">
+            <summary
+              class="flex cursor-pointer items-center justify-between gap-4 text-left"
+            >
+              <span class="serif text-xl text-sand sm:text-2xl"
+                >What is Leopardus tilcayo?</span
+              ><span
+                class="font-mono text-amber transition group-open:rotate-45"
+                >+</span
+              >
+            </summary>
+            <p class="mt-3 max-w-3xl text-base leading-relaxed text-muted">
+              A small wild tiger cat species from Bolivia&#x27;s Yungas cloud
+              forest, described on September 17, 2026 in Current Biology and
+              announced by National Geographic. The first new living cat species
+              named since the pampas cat in 1923.
+            </p>
+          </details>
+          <details class="group py-4">
+            <summary
+              class="flex cursor-pointer items-center justify-between gap-4 text-left"
+            >
+              <span class="serif text-xl text-sand sm:text-2xl"
+                >Tigrino vs tilcayo?</span
+              ><span
+                class="font-mono text-amber transition group-open:rotate-45"
+                >+</span
+              >
+            </summary>
+            <p class="mt-3 max-w-3xl text-base leading-relaxed text-muted">
+              Tigrino is the cat&#x27;s name, given by sanctuary staff in 2017.
+              Tilcayo is the species name, from the word Yungas locals have
+              always used for the animal. One cat, two names.
+            </p>
+          </details>
+          <details class="group py-4">
+            <summary
+              class="flex cursor-pointer items-center justify-between gap-4 text-left"
+            >
+              <span class="serif text-xl text-sand sm:text-2xl"
+                >How much has been donated?</span
+              ><span
+                class="font-mono text-amber transition group-open:rotate-45"
+                >+</span
+              >
+            </summary>
+            <p class="mt-3 max-w-3xl text-base leading-relaxed text-muted">
+              Over $100,000 within 48 hours, to La Senda
+              Verde Animal Refuge Inc, the sanctuary&#x27;s US 501(c)(3). In
+              their words it goes to “Tigrino and more than 1,000 rescued
+              animals.” The counter on this page reads directly from donate.gg.
+              The sanctuary confirmed receipt on X, in a photo, and on video.
+            </p>
+          </details>
+          <details class="group py-4">
+            <summary
+              class="flex cursor-pointer items-center justify-between gap-4 text-left"
+            >
+              <span class="serif text-xl text-sand sm:text-2xl"
+                >What is $TIGRINO?</span
+              ><span
+                class="font-mono text-amber transition group-open:rotate-45"
+                >+</span
+              >
+            </summary>
+            <p class="mt-3 max-w-3xl text-base leading-relaxed text-muted">
+              A community-run memecoin on Robinhood Chain, tradeable on Uniswap as of
+              September 18, 2026. 100% of its creator fees are locked to the
+              sanctuary; the creator receives 0% and holds no tokens. No team,
+              no roadmap, no affiliation with National Geographic or the study
+              authors. The price can go to zero.
+            </p>
+          </details>
+          <details class="group py-4">
+            <summary
+              class="flex cursor-pointer items-center justify-between gap-4 text-left"
+            >
+              <span class="serif text-xl text-sand sm:text-2xl"
+                >Is this the sanctuary&#x27;s website?</span
+              ><span
+                class="font-mono text-amber transition group-open:rotate-45"
+                >+</span
+              >
+            </summary>
+            <p class="mt-3 max-w-3xl text-base leading-relaxed text-muted">
+              No. This is a community site. The sanctuary is sendaverde.org and
+              @La_Senda_Verde on X. They know about this project and have
+              publicly acknowledged it, but they don&#x27;t run it.
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="mx-auto max-w-5xl px-5 pb-16 pt-4">
+        <div
+          class="flex flex-wrap items-end justify-between gap-6 border-t border-sand/15 pt-6"
+        >
+          <div>
+            <span
+              class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+              >07 / The archive</span
+            >
+            <p class="serif mt-3 text-3xl text-sand sm:text-4xl">
+              Thirty-one memes. One cat. Free to use.
+            </p>
+          </div>
+          <a
+            class="inline-flex items-center justify-center rounded-full border border-sand/25 px-5 py-2.5 text-sm font-semibold text-sand transition hover:border-sand/60 hover:bg-white/5"
+            href="/memes"
+            >Open the meme wall</a
+          >
+        </div>
+        <div class="mt-6 grid grid-cols-4 gap-2 sm:grid-cols-8">
+          <a href="/memes"
+            ><img
+              alt="Tigrino meme"
+              loading="lazy"
+              width="400"
+              height="400"
+              decoding="async"
+              data-nimg="1"
+              class="aspect-square w-full rounded-lg border border-white/10 object-cover transition hover:opacity-80"
+              style="color: transparent"
+              sizes="12vw"
+              srcset="
+                /_next/image?url=%2Fgallery%2F13.webp&amp;w=96&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe     96w,
+                /_next/image?url=%2Fgallery%2F13.webp&amp;w=128&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   128w,
+                /_next/image?url=%2Fgallery%2F13.webp&amp;w=256&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   256w,
+                /_next/image?url=%2Fgallery%2F13.webp&amp;w=384&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   384w,
+                /_next/image?url=%2Fgallery%2F13.webp&amp;w=640&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   640w,
+                /_next/image?url=%2Fgallery%2F13.webp&amp;w=750&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   750w,
+                /_next/image?url=%2Fgallery%2F13.webp&amp;w=828&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   828w,
+                /_next/image?url=%2Fgallery%2F13.webp&amp;w=1080&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1080w,
+                /_next/image?url=%2Fgallery%2F13.webp&amp;w=1200&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1200w,
+                /_next/image?url=%2Fgallery%2F13.webp&amp;w=1920&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1920w,
+                /_next/image?url=%2Fgallery%2F13.webp&amp;w=2048&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 2048w,
+                /_next/image?url=%2Fgallery%2F13.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 3840w
+              "
+              src="/_next/image?url=%2Fgallery%2F13.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe" /></a
+          ><a href="/memes"
+            ><img
+              alt="Tigrino meme"
+              loading="lazy"
+              width="400"
+              height="400"
+              decoding="async"
+              data-nimg="1"
+              class="aspect-square w-full rounded-lg border border-white/10 object-cover transition hover:opacity-80"
+              style="color: transparent"
+              sizes="12vw"
+              srcset="
+                /_next/image?url=%2Fgallery%2F07.webp&amp;w=96&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe     96w,
+                /_next/image?url=%2Fgallery%2F07.webp&amp;w=128&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   128w,
+                /_next/image?url=%2Fgallery%2F07.webp&amp;w=256&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   256w,
+                /_next/image?url=%2Fgallery%2F07.webp&amp;w=384&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   384w,
+                /_next/image?url=%2Fgallery%2F07.webp&amp;w=640&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   640w,
+                /_next/image?url=%2Fgallery%2F07.webp&amp;w=750&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   750w,
+                /_next/image?url=%2Fgallery%2F07.webp&amp;w=828&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   828w,
+                /_next/image?url=%2Fgallery%2F07.webp&amp;w=1080&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1080w,
+                /_next/image?url=%2Fgallery%2F07.webp&amp;w=1200&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1200w,
+                /_next/image?url=%2Fgallery%2F07.webp&amp;w=1920&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1920w,
+                /_next/image?url=%2Fgallery%2F07.webp&amp;w=2048&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 2048w,
+                /_next/image?url=%2Fgallery%2F07.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 3840w
+              "
+              src="/_next/image?url=%2Fgallery%2F07.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe" /></a
+          ><a href="/memes"
+            ><img
+              alt="Tigrino meme"
+              loading="lazy"
+              width="400"
+              height="400"
+              decoding="async"
+              data-nimg="1"
+              class="aspect-square w-full rounded-lg border border-white/10 object-cover transition hover:opacity-80"
+              style="color: transparent"
+              sizes="12vw"
+              srcset="
+                /_next/image?url=%2Fgallery%2F18.webp&amp;w=96&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe     96w,
+                /_next/image?url=%2Fgallery%2F18.webp&amp;w=128&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   128w,
+                /_next/image?url=%2Fgallery%2F18.webp&amp;w=256&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   256w,
+                /_next/image?url=%2Fgallery%2F18.webp&amp;w=384&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   384w,
+                /_next/image?url=%2Fgallery%2F18.webp&amp;w=640&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   640w,
+                /_next/image?url=%2Fgallery%2F18.webp&amp;w=750&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   750w,
+                /_next/image?url=%2Fgallery%2F18.webp&amp;w=828&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   828w,
+                /_next/image?url=%2Fgallery%2F18.webp&amp;w=1080&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1080w,
+                /_next/image?url=%2Fgallery%2F18.webp&amp;w=1200&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1200w,
+                /_next/image?url=%2Fgallery%2F18.webp&amp;w=1920&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1920w,
+                /_next/image?url=%2Fgallery%2F18.webp&amp;w=2048&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 2048w,
+                /_next/image?url=%2Fgallery%2F18.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 3840w
+              "
+              src="/_next/image?url=%2Fgallery%2F18.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe" /></a
+          ><a href="/memes"
+            ><img
+              alt="Tigrino meme"
+              loading="lazy"
+              width="400"
+              height="400"
+              decoding="async"
+              data-nimg="1"
+              class="aspect-square w-full rounded-lg border border-white/10 object-cover transition hover:opacity-80"
+              style="color: transparent"
+              sizes="12vw"
+              srcset="
+                /_next/image?url=%2Fgallery%2F02.webp&amp;w=96&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe     96w,
+                /_next/image?url=%2Fgallery%2F02.webp&amp;w=128&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   128w,
+                /_next/image?url=%2Fgallery%2F02.webp&amp;w=256&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   256w,
+                /_next/image?url=%2Fgallery%2F02.webp&amp;w=384&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   384w,
+                /_next/image?url=%2Fgallery%2F02.webp&amp;w=640&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   640w,
+                /_next/image?url=%2Fgallery%2F02.webp&amp;w=750&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   750w,
+                /_next/image?url=%2Fgallery%2F02.webp&amp;w=828&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   828w,
+                /_next/image?url=%2Fgallery%2F02.webp&amp;w=1080&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1080w,
+                /_next/image?url=%2Fgallery%2F02.webp&amp;w=1200&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1200w,
+                /_next/image?url=%2Fgallery%2F02.webp&amp;w=1920&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1920w,
+                /_next/image?url=%2Fgallery%2F02.webp&amp;w=2048&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 2048w,
+                /_next/image?url=%2Fgallery%2F02.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 3840w
+              "
+              src="/_next/image?url=%2Fgallery%2F02.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe" /></a
+          ><a href="/memes"
+            ><img
+              alt="Tigrino meme"
+              loading="lazy"
+              width="400"
+              height="400"
+              decoding="async"
+              data-nimg="1"
+              class="aspect-square w-full rounded-lg border border-white/10 object-cover transition hover:opacity-80"
+              style="color: transparent"
+              sizes="12vw"
+              srcset="
+                /_next/image?url=%2Fgallery%2F12.webp&amp;w=96&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe     96w,
+                /_next/image?url=%2Fgallery%2F12.webp&amp;w=128&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   128w,
+                /_next/image?url=%2Fgallery%2F12.webp&amp;w=256&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   256w,
+                /_next/image?url=%2Fgallery%2F12.webp&amp;w=384&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   384w,
+                /_next/image?url=%2Fgallery%2F12.webp&amp;w=640&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   640w,
+                /_next/image?url=%2Fgallery%2F12.webp&amp;w=750&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   750w,
+                /_next/image?url=%2Fgallery%2F12.webp&amp;w=828&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   828w,
+                /_next/image?url=%2Fgallery%2F12.webp&amp;w=1080&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1080w,
+                /_next/image?url=%2Fgallery%2F12.webp&amp;w=1200&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1200w,
+                /_next/image?url=%2Fgallery%2F12.webp&amp;w=1920&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1920w,
+                /_next/image?url=%2Fgallery%2F12.webp&amp;w=2048&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 2048w,
+                /_next/image?url=%2Fgallery%2F12.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 3840w
+              "
+              src="/_next/image?url=%2Fgallery%2F12.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe" /></a
+          ><a href="/memes"
+            ><img
+              alt="Tigrino meme"
+              loading="lazy"
+              width="400"
+              height="400"
+              decoding="async"
+              data-nimg="1"
+              class="aspect-square w-full rounded-lg border border-white/10 object-cover transition hover:opacity-80"
+              style="color: transparent"
+              sizes="12vw"
+              srcset="
+                /_next/image?url=%2Fgallery%2F15.webp&amp;w=96&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe     96w,
+                /_next/image?url=%2Fgallery%2F15.webp&amp;w=128&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   128w,
+                /_next/image?url=%2Fgallery%2F15.webp&amp;w=256&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   256w,
+                /_next/image?url=%2Fgallery%2F15.webp&amp;w=384&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   384w,
+                /_next/image?url=%2Fgallery%2F15.webp&amp;w=640&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   640w,
+                /_next/image?url=%2Fgallery%2F15.webp&amp;w=750&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   750w,
+                /_next/image?url=%2Fgallery%2F15.webp&amp;w=828&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   828w,
+                /_next/image?url=%2Fgallery%2F15.webp&amp;w=1080&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1080w,
+                /_next/image?url=%2Fgallery%2F15.webp&amp;w=1200&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1200w,
+                /_next/image?url=%2Fgallery%2F15.webp&amp;w=1920&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1920w,
+                /_next/image?url=%2Fgallery%2F15.webp&amp;w=2048&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 2048w,
+                /_next/image?url=%2Fgallery%2F15.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 3840w
+              "
+              src="/_next/image?url=%2Fgallery%2F15.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe" /></a
+          ><a href="/memes"
+            ><img
+              alt="Tigrino meme"
+              loading="lazy"
+              width="400"
+              height="400"
+              decoding="async"
+              data-nimg="1"
+              class="aspect-square w-full rounded-lg border border-white/10 object-cover transition hover:opacity-80"
+              style="color: transparent"
+              sizes="12vw"
+              srcset="
+                /_next/image?url=%2Fgallery%2F19.webp&amp;w=96&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe     96w,
+                /_next/image?url=%2Fgallery%2F19.webp&amp;w=128&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   128w,
+                /_next/image?url=%2Fgallery%2F19.webp&amp;w=256&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   256w,
+                /_next/image?url=%2Fgallery%2F19.webp&amp;w=384&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   384w,
+                /_next/image?url=%2Fgallery%2F19.webp&amp;w=640&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   640w,
+                /_next/image?url=%2Fgallery%2F19.webp&amp;w=750&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   750w,
+                /_next/image?url=%2Fgallery%2F19.webp&amp;w=828&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   828w,
+                /_next/image?url=%2Fgallery%2F19.webp&amp;w=1080&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1080w,
+                /_next/image?url=%2Fgallery%2F19.webp&amp;w=1200&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1200w,
+                /_next/image?url=%2Fgallery%2F19.webp&amp;w=1920&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1920w,
+                /_next/image?url=%2Fgallery%2F19.webp&amp;w=2048&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 2048w,
+                /_next/image?url=%2Fgallery%2F19.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 3840w
+              "
+              src="/_next/image?url=%2Fgallery%2F19.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe" /></a
+          ><a href="/memes"
+            ><img
+              alt="Tigrino meme"
+              loading="lazy"
+              width="400"
+              height="400"
+              decoding="async"
+              data-nimg="1"
+              class="aspect-square w-full rounded-lg border border-white/10 object-cover transition hover:opacity-80"
+              style="color: transparent"
+              sizes="12vw"
+              srcset="
+                /_next/image?url=%2Fgallery%2F27.webp&amp;w=96&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe     96w,
+                /_next/image?url=%2Fgallery%2F27.webp&amp;w=128&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   128w,
+                /_next/image?url=%2Fgallery%2F27.webp&amp;w=256&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   256w,
+                /_next/image?url=%2Fgallery%2F27.webp&amp;w=384&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   384w,
+                /_next/image?url=%2Fgallery%2F27.webp&amp;w=640&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   640w,
+                /_next/image?url=%2Fgallery%2F27.webp&amp;w=750&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   750w,
+                /_next/image?url=%2Fgallery%2F27.webp&amp;w=828&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe   828w,
+                /_next/image?url=%2Fgallery%2F27.webp&amp;w=1080&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1080w,
+                /_next/image?url=%2Fgallery%2F27.webp&amp;w=1200&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1200w,
+                /_next/image?url=%2Fgallery%2F27.webp&amp;w=1920&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 1920w,
+                /_next/image?url=%2Fgallery%2F27.webp&amp;w=2048&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 2048w,
+                /_next/image?url=%2Fgallery%2F27.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe 3840w
+              "
+              src="/_next/image?url=%2Fgallery%2F27.webp&amp;w=3840&amp;q=75&amp;dpl=dpl_CRLsqrwYwimxiqKaKrRYmZ1rUQUe"
+          /></a>
+        </div>
+      </section>
+      <footer class="border-t border-sand/15">
+        <div class="mx-auto max-w-5xl px-5 py-10">
+          <div class="flex flex-wrap items-baseline justify-between gap-6">
+            <p class="serif text-2xl text-sand">
+              Tigrino is his name. Tilcayo is the species.
+              <span class="text-amber">$TIGRINO</span> is the joke that feeds
+              him.
+            </p>
+            <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
+              <a class="hover:text-sand" href="/#story">Story</a
+              ><a class="hover:text-sand" href="/sanctuary">Sanctuary</a
+              ><a class="hover:text-sand" href="/#ledger">Ledger</a
+              ><a class="hover:text-sand" href="/#coin">Coin</a
+              ><a class="hover:text-sand" href="/memes">Memes</a
+              ><a class="hover:text-sand" href="/press">Press</a
+              ><a
+                href="https://x.com/itsTigrino"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-sand"
+                >@itsTigrino</a
+              ><a
+                href="https://x.com/La_Senda_Verde"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-sand"
+                >@La_Senda_Verde</a
+              ><a href="mailto:press@tigrino.community" class="hover:text-sand"
+                >press@tigrino.community</a
+              >
+            </div>
+          </div>
+          <p class="mt-8 max-w-4xl text-xs leading-relaxed text-muted">
+            Community fan site. Not affiliated with La Senda Verde, National
+            Geographic, Uniswap or donate.gg. $TIGRINO is a memecoin; its only
+            link to the sanctuary is the on-chain fee routing described on this
+            site. Not financial advice. Donation figures are read live from
+            donate.gg at current ETH price, unaudited. Real photos and video of
+            Tigrino belong to La Senda Verde.
+          </p>
+        </div>
+      </footer>
+    </main>
+    <!--$--><!--/$--><!--$!--><template
+      data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING"
+    ></template
+    ><!--/$-->
+    <script
+      src="/_next/static/immutable/chunks/1lu82lmj0y481.js"
+      id="_R_"
+      async=""
+    ></script>
+    <script>
+      (self.__next_f = self.__next_f || []).push([0]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '1:"$Sreact.fragment"\n6:I[4450,["/_next/static/immutable/chunks/2d2n81hep7dzu.js"],"default",1]\n:HL["/_next/static/immutable/chunks/1ysr9mbkeuljz.css","style"]\n:HL["/_next/static/immutable/media/54fc36028e2bb174-s.p.1h6pn64pmfi2q.woff2","font",{"crossOrigin":"","type":"font/woff2"}]\n:HL["/_next/static/immutable/media/797e433ab948586e-s.p.1v5bejj26fx9h.woff2","font",{"crossOrigin":"","type":"font/woff2"}]\n:HL["/_next/static/immutable/media/caa3a2e1cccd8315-s.p.0zr6hhvz-h9nw.woff2","font",{"crossOrigin":"","type":"font/woff2"}]\n2:T1043,[{"@context":"https://schema.org","@type":"WebSite","name":"Tigrino","alternateName":["Tigrino the cat","Tigrino Leopardus tilcayo","tigrino.community"],"url":"https://tigrino.community","description":"The only known cat of Leopardus tilcayo, the first new cat species in 100 years. Raised at La Senda Verde sanctuary, Bolivia. $100K+ donated by the $TIGRINO community, live counter.","sameAs":["https://x.com/itsTigrino","https://www.tiktok.com/@itstigrino","https://x.com/i/communities/2032558599948419404"]},{"@context":"https://schema.org","@type":"Article","headline":"Tigrino: the only known Leopardus tilcayo and the $100,000 his sanctuary received in 48 hours","description":"The only known cat of Leopardus tilcayo, the first new cat species in 100 years. Raised at La Senda Verde sanctuary, Bolivia. $100K+ donated by the $TIGRINO community, live counter.","image":["https://tigrino.community/img/sanctuary_thankyou.jpg","https://tigrino.community/gallery/04.webp"],"datePublished":"2026-09-19T00:00:00Z","dateModified":"2026-09-20T15:16:24.902Z","author":{"@type":"Organization","name":"Tigrino community","url":"https://tigrino.community"},"publisher":{"@type":"Organization","name":"Tigrino community","url":"https://tigrino.community","logo":{"@type":"ImageObject","url":"https://tigrino.community/gallery/04.webp"}},"mainEntityOfPage":"https://tigrino.community","about":[{"@type":"Thing","name":"Leopardus tilcayo","sameAs":"https://en.wikipedia.org/wiki/Tilcayo_tiger_cat"},{"@type":"Organization","name":"La Senda Verde Wildlife Sanctuary","url":"https://sendaverde.org"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who is Tigrino?","acceptedAnswer":{"@type":"Answer","text":"Tigrino is a male wild cat, about 10 years old and 3 lbs (1.4 kg), living at La Senda Verde Wildlife Sanctuary in Bolivia\'s Yungas. He was found as a kitten on a rural road in 2016, mistaken for a house cat, and brought to the sanctuary in 2017. In September 2026 scientists confirmed he belongs to Leopardus tilcayo, a species never described before. He is the only known individual."}},{"@type":"Question","name":"What is Leopardus tilcayo?","acceptedAnswer":{"@type":"Answer","text":"Leopardus tilcayo is a small wild tiger cat species from Bolivia\'s Yungas cloud forest, formally described on September 17, 2026 in the journal Current Biology and announced by National Geographic. It is the first new living cat species named in over 100 years, since the pampas cat in 1923. It split from other tiger cats about 1.4 million years ago."}},{"@type":"Question","name":"What is the difference between Tigrino and tilcayo?","acceptedAnswer":{"@type":"Answer","text":"Tigrino is the name of the individual cat, given by La Senda Verde sanctuary staff in 2017. Tilcayo (Leopardus tilcayo) is the species name, taken from the word local Yungas communities use for the animal."}},{"@type":"Question","name":"How much money has been donated to Tigrino\'s sanctuary?","acceptedAnswer":{"@type":"Answer","text":"Over $100,000 was donated to La Senda Verde Animal Refuge Inc, the sanctuary\'s US 501(c)(3), within 48 hours of the species announcement. The funds come from $TIGRINO, a community token on Robinhood Chain whose creator fees are locked 100% to the sanctuary via donate.gg. Every donation is public on donate.gg and the sanctuary confirmed receipt on X."}},{"@type":"Question","name":"What is $TIGRINO?","acceptedAnswer":{"@type":"Answer","text":"$TIGRINO is a community-run memecoin on Robinhood Chain, tradeable on Uniswap as of September 18, 2026. 100% of its creator fees are locked on-chain to La Senda Verde Animal Refuge Inc; the creator receives 0% and holds no tokens. It has no team, no roadmap, and no affiliation with National Geographic or the study authors."}},{"@type":"Question","name":"Where does Tigrino live?","acceptedAnswer":{"@type":"Answer","text":"Tigrino lives at La Senda Verde Wildlife Sanctuary near Coroico in Bolivia\'s Yungas region, a rescue that cares for more than 1,000 animals recovered from wildlife trafficking. The sanctuary posts updates about him at @La_Senda_Verde on X."}}]}]0:{"P":null,"c":["","index"],"q":"","i":false,"f":[[["",{"children":["__PAGE__",{},"$undefined","$undefined",4224]},"$undefined","$undefined",4112],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/immutable/chunks/1ysr9mbkeuljz.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/immutable/chunks/2d2n81hep7dzu.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__variable fraunces_c5f41878-module__6OiOuW__variable h-full antialiased","children":[["$","head",null,{"children":["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}]}],"$L3"]}]]}],{"children":["$L4",{},null,false,null]},null,false,null],"$L5",false]],"m":"$undefined","G":["$6",["$L7"]],"S":true,"h":null,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined"}\n8:I[10240,["/_next/static/immutable/chunks/2d2n81hep7dzu.js"],"default"]\n9:I[75681,["/_next/static/immutable/chunks/2d2n81hep7dzu.js"],"default"]\na:I[82236,["/_next/static/immutable/chunks/2d2n81hep7dzu.js"],"Analytics"]\nc:I[21017,["/_next/static/immutable/chunks/2d2n81hep7dzu.js"],"OutletBoundary"]\nd:"$Sreact.suspense"\nf:I[21017,["/_next/static/immutable/chunks/2d2n81hep7dzu.js"],"ViewportBoundary"]\n11:I[21017,["/_next/static/immutable/chunks/2d2n81hep7dzu.js"],"MetadataBoundary"]\n3:["$","body",null,{"className":"min-h-full flex flex-col","children":[["$","$L8",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L9",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$La",null,{}]]}]\n4:["$","$1","c",{"children":["$Lb",[["$","script","script-0",{"src":"/_next/static/immutable/chunks/0ap9w7o7ihppc.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/immutable/chunks/0drqgpn8c67hv.js","async":true,"nonce":"$undefined"}]],["$","$Lc",null,{"children":["$","$d",null,{"name":"Next.MetadataOutlet","children":"$@e"}]}]]}]\n5:["$","$1","h",{"children":[null,["$","$Lf",null,{"children":"$L10"}],["$","div",null,{"hidden":true,"children":["$","$L11",null,{"children":["$","$d",null,{"name":"Next.Metadata","children":"$L12"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]\n7:["$","link","0",{"rel":"stylesheet","href":"/_next/static/immutable/chunks/1ysr9mbkeuljz.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]\n10:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]\n13:I[39640,["/_next/static/immutable/chunks/2d2n81hep7dzu.js"],"IconMark"]\ne:null\n12:[["$","title","0",{"children":"Tigrino: the only known Leopardus tilcayo, Bolivia\'s new cat species"}],["$","meta","1",{"name":"description","content":"The only known cat of Leopardus tilcayo, the first new cat species in 100 years. Raised at La Senda Verde sanctuary, Bolivia. $100K+ donated by the $TIGRINO community, live counter."}],["$","meta","2",{"name":"keywords","content":"Tigrino,Tigrino cat,tilcayo,tilcayo cat,Leopardus tilcayo,new cat species,new cat species 2026,first new cat species in 100 years,Bolivia cat species,Yungas tiger cat,La Senda Verde,Senda Verde sanctuary,TIGRINO token,$TIGRINO,Tigrino donations,Robinhood Chain,Uniswap Robinhood"}],["$","meta","3",{"name":"robots","content":"index, follow"}],["$","meta","4",{"name":"googlebot","content":"index, follow, max-image-preview:large, max-snippet:-1"}],["$","meta","5",{"name":"category","content":"animals"}],["$","link","6",{"rel":"canonical","href":"https://tigrino.community"}],["$","meta","7",{"property":"og:title","content":"Tigrino: the only known Leopardus tilcayo, Bolivia\'s new cat species"}],["$","meta","8",{"property":"og:description","content":"The only known cat of Leopardus tilcayo, the first new cat species in 100 years. Raised at La Senda Verde sanctuary, Bolivia. $100K+ donated by the $TIGRINO community, live counter."}],["$","meta","9",{"property":"og:url","content":"https://tigrino.community"}],["$","meta","10",{"property":"og:site_name","content":"Tigrino"}],["$","meta","11",{"property":"og:locale","content":"en_US"}],["$","meta","12",{"property":"og:image","content":"https://tigrino.community/img/sanctuary_thankyou.jpg"}],["$","meta","13",{"property":"og:image:width","content":"960"}],["$","meta","14",{"property":"og:image:height","content":"1280"}],["$","meta","15",{"property":"og:image:alt","content":"Tigrino, the only known Leopardus tilcayo, with his keeper at La Senda Verde sanctuary"}],["$","meta","16",{"property":"og:type","content":"website"}],["$","meta","17",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","18",{"name":"twitter:site","content":"@itsTigrino"}],["$","meta","19",{"name":"twitter:creator","content":"@itsTigrino"}],["$","meta","20",{"name":"twitter:title","content":"Tigrino: the only known Leopardus tilcayo, Bolivia\'s new cat species"}],["$","meta","21",{"name":"twitter:description","content":"The only known cat of Leopardus tilcayo, the first new cat species in 100 years. Raised at La Senda Verde sanctuary, Bolivia. $100K+ donated by the $TIGRINO community, live counter."}],["$","meta","22",{"name":"twitter:image","content":"https://tigrino.community/img/sanctuary_thankyou.jpg"}],["$","link","23",{"rel":"icon","href":"/favicon.ico?favicon.193b6ddz3zouh.ico","sizes":"64x64","type":"image/x-icon"}],["$","link","24",{"rel":"icon","href":"/icon.png?icon.41mxgn1zej1t2.png","sizes":"512x512","type":"image/png"}],["$","link","25",{"rel":"apple-touch-icon","href":"/apple-icon.png?apple-icon.3l-_bs--3_epn.png","sizes":"180x180","type":"image/png"}],["$","$L13","26",{}]]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '14:I[3453,["/_next/static/immutable/chunks/2d2n81hep7dzu.js","/_next/static/immutable/chunks/0ap9w7o7ihppc.js","/_next/static/immutable/chunks/0drqgpn8c67hv.js"],""]\n15:I[43923,["/_next/static/immutable/chunks/2d2n81hep7dzu.js","/_next/static/immutable/chunks/0ap9w7o7ihppc.js","/_next/static/immutable/chunks/0drqgpn8c67hv.js"],"MobileNav"]\nb:["$","main",null,{"className":"flex-1","children":[["$","header",null,{"className":"sticky top-0 z-30 border-b border-white/5 bg-background/85 backdrop-blur","children":["$","nav",null,{"className":"mx-auto flex max-w-5xl items-center justify-between gap-3 px-5 py-3 text-sm","children":[["$","$L14",null,{"href":"/","className":"serif text-lg font-semibold text-sand","children":["Tigrino ",["$","span",null,{"aria-hidden":true,"className":"ml-1","children":"😾"}]]}],["$","div",null,{"className":"hidden gap-7 text-muted md:flex","children":[[["$","$L14","/#story",{"href":"/#story","className":"hover:text-sand","children":"Story"}],[],["$","$L14","/#ledger",{"href":"/#ledger","className":"hover:text-sand","children":"Ledger"}],["$","$L14","/#coin",{"href":"/#coin","className":"hover:text-sand","children":"Coin"}],[],[]],["$","a",null,{"href":"https://x.com/itsTigrino","target":"_blank","rel":"noopener noreferrer","className":"hover:text-sand","children":"@itsTigrino"}]]}],["$","div",null,{"className":"flex items-center gap-2","children":[["$","a",null,{"href":"https://app.uniswap.org/swap?chain=robinhood&inputCurrency=NATIVE&outputCurrency=0xComingSoon","target":"_blank","rel":"noopener noreferrer","className":"rounded-full bg-amber px-4 py-1.5 font-semibold text-[#1a1408] hover:bg-amber-soft","children":"$$TIGRINO"}],["$","$L15",null,{}]]}]]}]}],["$","section",null,{"className":"mx-auto max-w-5xl px-5 pb-16 pt-10 sm:pt-16","children":[["$","div",null,{"className":"flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2","children":[["$","span",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted ","children":"Field guide · Specimen 001 · Yungas, Bolivia"}],["$","span",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted ","children":"First new cat species in 103 years"}]]}],["$","h1",null,{"className":"serif mt-6 text-[19vw] font-medium leading-[0.85] tracking-tight text-sand sm:text-[11rem] lg:text-[13rem]","children":["Tigrino",["$","span",null,{"className":"text-amber","children":"."}]]}],["$","div",null,{"className":"mt-8 grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-end","children":[["$","div",null,{"className":"lg:pb-2","children":[["$","p",null,{"className":"serif text-2xl leading-snug text-sand sm:text-3xl","children":"The only known member of a species science found last week. Three pounds. Lives in a Bolivian sanctuary. In the 48 hours after the news broke, strangers sent that sanctuary over $100,000. It feeds him, and the thousand other rescued animals he lives with."}],["$","div",null,{"className":"mt-8 flex flex-wrap gap-3","children":[["$","$L14",null,{"href":"#story","className":"inline-flex items-center justify-center rounded-full bg-amber px-5 py-2.5 text-sm font-semibold text-[#1a1408] transition hover:bg-amber-soft","children":"Read the story"}],["$","$L14",null,{"href":"#coin","className":"inline-flex items-center justify-center rounded-full border border-sand/25 px-5 py-2.5 text-sm font-semibold text-sand transition hover:border-sand/60 hover:bg-white/5","children":"I’m here for the coin"}],["$","a",null,{"href":"https://sendaverde.org","target":"_blank","rel":"noopener noreferrer","className":"inline-flex items-center justify-center rounded-full border border-sand/25 px-5 py-2.5 text-sm font-semibold text-sand transition hover:border-sand/60 hover:bg-white/5","children":"Donate directly"}]]}]]}],["$","figure",null,{"className":"relative","children":[["$","video",null,{"src":"/img/tigrino_chill.mp4","autoPlay":true,"muted":true,"loop":true,"playsInline":true,"poster":"/gallery/04.webp","className":"aspect-[16/10] w-full rounded-2xl border border-white/10 object-cover"}],["$","figcaption",null,{"className":"mt-2 flex justify-between","children":[["$","span",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted ","children":"Tigrino in his enclosure, 18 Sep 2026"}],"$L16"]}]]}]]}],"$L17"]}],"$L18","$L19","$L1a","$L1b","$L1c","$L1d","$L1e","$L1f"]}]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '20:I[91514,["/_next/static/immutable/chunks/2d2n81hep7dzu.js","/_next/static/immutable/chunks/0ap9w7o7ihppc.js","/_next/static/immutable/chunks/0drqgpn8c67hv.js"],"Image"]\n25:I[50152,["/_next/static/immutable/chunks/2d2n81hep7dzu.js","/_next/static/immutable/chunks/0ap9w7o7ihppc.js","/_next/static/immutable/chunks/0drqgpn8c67hv.js"],"LiveDonations"]\n27:I[97838,["/_next/static/immutable/chunks/2d2n81hep7dzu.js","/_next/static/immutable/chunks/0ap9w7o7ihppc.js","/_next/static/immutable/chunks/0drqgpn8c67hv.js"],"CopyCA"]\n16:["$","a",null,{"href":"https://x.com/La_Senda_Verde/status/2101075567655399821","target":"_blank","rel":"noopener noreferrer","children":["$","span",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted hover:text-sand","children":"Video: @La_Senda_Verde ↗"}]}]\n17:["$","div",null,{"className":"mt-12 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-sand/15 pt-5","children":[["$","span",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted ","children":"Covered by"}],[["$","a","National Geographic",{"href":"https://www.nationalgeographic.com/animals/article/meet-the-first-new-cat-species-discovered-in-100-years","target":"_blank","rel":"noopener noreferrer","className":"text-sm text-sand/80 hover:text-sand","children":"National Geographic"}],["$","a","Reuters",{"href":"https://www.reuters.com/business/environment/new-cat-species-identified-bolivia-first-over-century-2026-09-17/","target":"_blank","rel":"noopener noreferrer","className":"text-sm text-sand/80 hover:text-sand","children":"Reuters"}],["$","a","The New York Times",{"href":"https://www.nytimes.com/2026/09/18/science/tilcayo-new-cat-species-bolivia.html","target":"_blank","rel":"noopener noreferrer","className":"text-sm text-sand/80 hover:text-sand","children":"The New York Times"}],["$","a","BBC",{"href":"https://www.bbc.com/news/articles/c6x2zgv9rr4ro","target":"_blank","rel":"noopener noreferrer","className":"text-sm text-sand/80 hover:text-sand","children":"BBC"}],["$","a","NBC News",{"href":"https://www.nbcnews.com/science/environment/new-wild-cat-species-identified-rcna598113","target":"_blank","rel":"noopener noreferrer","className":"text-sm text-sand/80 hover:text-sand","children":"NBC News"}],["$","a","ABC News",{"href":"https://x.com/ABC/status/2101456972021125260","target":"_blank","rel":"noopener noreferrer","className":"text-sm text-sand/80 hover:text-sand","children":"ABC News"}]],["$","$L14",null,{"href":"/press","className":"text-sm text-amber hover:text-amber-soft","children":"+ press kit"}]]}]\n18:["$","section",null,{"className":"mx-auto max-w-5xl px-5 py-12 sm:py-16","children":[["$","div",null,{"className":"mb-10 border-t border-sand/15 pt-6 sm:mb-14","children":[["$","p",null,{"className":"font-mono text-xs uppercase tracking-[0.25em] text-amber","children":["01"," ",["$","span",null,{"className":"text-muted","children":"/"}]," ","The specimen"]}],["$","h2",null,{"className":"serif mt-3 max-w-3xl text-3xl font-medium leading-[1.05] text-sand sm:text-5xl","children":"Smaller than your cat. Older than our species."}],["$","p",null,{"className":"mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg","children":"Everything below is from the paper, National Geographic, or the sanctuary. Nothing is estimated by us."}]]}],["$","div",null,{"className":"grid gap-10 lg:grid-cols-[1fr_1fr]","children":[["$","dl",null,{"className":"grid grid-cols-2 gap-x-6 gap-y-5","children":[["$","div","Species",{"className":"border-t border-sand/10 pt-3","children":[["$","dt",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted","children":"Species"}],["$","dd",null,{"className":"serif mt-1 text-xl text-sand","children":"Leopardus tilcayo"}]]}],["$","div","Common name",{"className":"border-t border-sand/10 pt-3","children":[["$","dt",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted","children":"Common name"}],["$","dd",null,{"className":"serif mt-1 text-xl text-sand","children":"Tilcayo tiger cat"}]]}],["$","div","Known individuals",{"className":"border-t border-sand/10 pt-3","children":[["$","dt",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted","children":"Known individuals"}],["$","dd",null,{"className":"serif mt-1 text-xl text-sand","children":"1"}]]}],["$","div","Weight",{"className":"border-t border-sand/10 pt-3","children":[["$","dt",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted","children":"Weight"}],["$","dd",null,{"className":"serif mt-1 text-xl text-sand","children":"1.4 kg · 3 lb"}]]}],["$","div","Length",{"className":"border-t border-sand/10 pt-3","children":[["$","dt",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted","children":"Length"}],["$","dd",null,{"className":"serif mt-1 text-xl text-sand","children":"46 cm · 18 in"}]]}],["$","div","Age",{"className":"border-t border-sand/10 pt-3","children":[["$","dt",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted","children":"Age"}],["$","dd",null,{"className":"serif mt-1 text-xl text-sand","children":"≈ 10 years"}]]}],["$","div","Range",{"className":"border-t border-sand/10 pt-3","children":[["$","dt",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted","children":"Range"}],["$","dd",null,{"className":"serif mt-1 text-xl text-sand","children":"Yungas cloud forest, Bolivia"}]]}],["$","div","Diverged",{"className":"border-t border-sand/10 pt-3","children":[["$","dt",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted","children":"Diverged"}],["$","dd",null,{"className":"serif mt-1 text-xl text-sand","children":"≈ 1.4 million years ago"}]]}],["$","div","Described",{"className":"border-t border-sand/10 pt-3","children":[["$","dt",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted","children":"Described"}],["$","dd",null,{"className":"serif mt-1 text-xl text-sand","children":"17 Sep 2026, Current Biology"}]]}],["$","div","Previous new cat",{"className":"border-t border-sand/10 pt-3","children":[["$","dt",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted","children":"Previous new cat"}],["$","dd",null,{"className":"serif mt-1 text-xl text-sand","children":"Pampas cat, 1923"}]]}]]}],["$","figure",null,{"children":[["$","$L20",null,{"src":"/img/tigrino_real.jpg","alt":"Tigrino in a tree at La Senda Verde","width":1200,"height":1200,"className":"aspect-square w-full rounded-2xl border border-white/10 object-cover","sizes":"(max-width: 1024px) 100vw, 50vw"}],["$","figcaption",null,{"className":"mt-2","children":["$","span",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted ","children":"Photo: La Senda Verde"}]}]]}]]}]]}]\n19:["$","section",null,{"id":"story","className":"mx-auto max-w-5xl scroll-mt-16 px-5 py-12 sm:py-16","children":[["$","div",null,{"className":"mb-10 border-t border-sand/15 pt-6 sm:mb-14","children":[["$","p",null,{"className":"font-mono text-xs uppercase tracking-[0.25em] text-amber","children":["02"," ",["$","span",null,{"className":"text-muted","children":"/"}]," ","The story"]}],["$","h2",null,{"className":"serif mt-3 max-w-3xl text-3xl font-medium leading-[1.05] text-sand sm:text-5xl","children":"Nine years in a sanctuary before anyone knew what he was."}],"$undefined"]}],["$","ol",null,{"className":"relative border-l border-sand/15 pl-6 sm:pl-10","children":[["$","li","2016",{"className":"relative mb-9 last:mb-0","children":[["$","span",null,{"className":"absolute -left-[1.85rem] top-2 h-2.5 w-2.5 rounded-full bg-amber sm:-left-[2.85rem]"}],["$","p",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-amber","children":"2016"}],["$","p",null,{"className":"serif mt-1 max-w-2xl text-xl leading-snug text-sand sm:text-2xl","children":"A man finds a kitten on a road in the Yungas and takes it home. He thinks it\'s a house cat."}]]}],["$","li","2017",{"className":"relative mb-9 last:mb-0","children":[["$","span",null,{"className":"absolute -left-[1.85rem] top-2 h-2.5 w-2.5 rounded-full bg-amber sm:-left-[2.85rem]"}],["$","p",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-amber","children":"2017"}],["$","p",null,{"className":"serif mt-1 max-w-2xl text-xl leading-snug text-sand sm:text-2xl","children":"It isn\'t. He brings it to La Senda Verde. Staff assume a common tiger cat and name him Tigrino. A biologist comes to look and takes a hundred photos."}]]}],["$","li","2019",{"className":"relative mb-9 last:mb-0","children":[["$","span",null,{"className":"absolute -left-[1.85rem] top-2 h-2.5 w-2.5 rounded-full bg-amber sm:-left-[2.85rem]"}],["$","p",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-amber","children":"2019"}],["$","p",null,{"className":"serif mt-1 max-w-2xl text-xl leading-snug text-sand sm:text-2xl","children":"Writing a field guide, she notices his spots match nothing from Brazil. “This is so wrong.”"}]]}],["$","li","2020–26",{"className":"relative mb-9 last:mb-0","children":[["$","span",null,{"className":"absolute -left-[1.85rem] top-2 h-2.5 w-2.5 rounded-full bg-amber sm:-left-[2.85rem]"}],["$","p",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-amber","children":"2020–26"}],["$","p",null,{"className":"serif mt-1 max-w-2xl text-xl leading-snug text-sand sm:text-2xl","children":"Thirty-eight genomes across the genus. His line split from every other tiger cat 1.4 million years ago."}]]}],["$","li","17 Sep 2026",{"className":"relative mb-9 last:mb-0","children":[["$","span",null,{"className":"absolute -left-[1.85rem] top-2 h-2.5 w-2.5 rounded-full bg-amber sm:-left-[2.85rem]"}],["$","p",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-amber","children":"17 Sep 2026"}],["$","p",null,{"className":"serif mt-1 max-w-2xl text-xl leading-snug text-sand sm:text-2xl","children":"Leopardus tilcayo is published. First new cat species in 103 years. Tigrino is the only one known to exist."}]]}],["$","li","18 Sep 2026",{"className":"relative mb-9 last:mb-0","children":[["$","span",null,{"className":"absolute -left-[1.85rem] top-2 h-2.5 w-2.5 rounded-full bg-amber sm:-left-[2.85rem]"}],["$","p",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-amber","children":"18 Sep 2026"}],["$","p",null,{"className":"serif mt-1 max-w-2xl text-xl leading-snug text-sand sm:text-2xl","children":"$$TIGRINO launches with 100% of its creator fees locked to his sanctuary. By evening the sanctuary posts a thank-you."}]]}],["$","li","19 Sep 2026",{"className":"relative mb-9 last:mb-0","children":["$L21","$L22","$L23"]}]]}],"$L24"]}]\n1a:["$","section",null,{"className":"mx-auto max-w-5xl px-5 py-12 sm:py-16","children":[["$","div",null,{"className":"mb-10 border-t border-sand/15 pt-6 sm:mb-14","children":[["$","p",null,{"className":"font-mono text-xs uppercase tracking-[0.25em] text-amber","children":["03"," ",["$","span",null,{"className":"text-muted","children":"/"}]," ","The sanctuary"]}],["$","h2",null,{"className":"serif mt-3 max-w-3xl text-3xl font-medium leading-[1.05] text-sand sm:text-5xl","children":"La Senda Verde. Founded 2003. One thousand rescued animals. One of them is famous now."}],"$undefined"]}],["$","div",null,{"className":"grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center","children":[[],["$","div",null,{"children":[["$","p",null,{"className":"mt-4","children":["$","span",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted ","children":"Marcelo Levy, co-founder · 19 Sep 2026"}]}],[]]}]]}]]}]\n1b:["$","section",null,{"id":"ledger","className":"scroll-mt-16 border-y border-sand/15 bg-moss/40","children":["$","div",null,{"className":"mx-auto max-w-5xl px-5 py-14 sm:py-20","children":[["$","div",null,{"className":"mb-10 border-t border-sand/15 pt-6 sm:mb-14","children":[["$","p",null,{"className":"font-mono text-xs uppercase tracking-[0.25em] text-amber","children":["04"," ",["$","span",null,{"className":"text-muted","children":"/"}]," ","The ledger"]}],["$","h2",null,{"className":"serif mt-3 max-w-3xl text-3xl font-medium leading-[1.05] text-sand sm:text-5xl","children":"Every dollar below is a public transaction. It feeds more than one cat."}],["$","p",null,{"className":"mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg","children":"Trading fees from $TIGRINO are locked to the sanctuary’s US charity and settled by donate.gg. It pays for Tigrino’s care and for the 1,000+ animals La Senda Verde has rescued from trafficking. The sanctuary never touches crypto. This number is read live from their ledger."}]]}],["$","$L25",null,{"initial":{"totalSol":1106.0237271550006,"totalUsd":119804.49012542966,"tigrinoSol":1102.8888969090006,"tigrinoShare":0.9971656754109031,"count":50,"solPrice":108.32,"lastGiftAt":"2026-09-20T14:44:44.000Z","recent":[{"id":"cmu9xguet000504js4h0l1ias","tx":"Npc38ZNHBM5bEkjb9YBfetiYLvnWhUsqZdih2SE1bmEHvsjCXKJe5DNZCSp6GzqQaoE1Gx8EhUPMKP2PrxyTsuC","at":"2026-09-20T14:44:44.000Z","from":"Leopardus Tilcayo","fromAddress":"AjygC8gewVhtDD36BLjbMaDUPC2VSMsa3gHrXdYYh36M","sol":56.933067545,"fromTigrino":true},{"id":"cmu99t1aq000104l5g98c9xjp","tx":"3fx7iW9ZcW6Fuk6zEKWfSwr4sBGhgAzzVWTz4qfQVN5gXgi9gyiTXpFuAJCXgej8tLbxQNXN5iuPrtHgY7EVNHxp","at":"2026-09-20T03:42:22.000Z","from":"Leopardus Tilcayo","fromAddress":"AjygC8gewVhtDD36BLjbMaDUPC2VSMsa3gHrXdYYh36M","sol":31.045705658,"fromTigrino":true},{"id":"cmu92dw1c000204l5cx862upd","tx":"4771c9jEHx78zrRuJgW2knE4yBcBgZ4xybKtUuq4Rkgv1vK3SyEKp52hxhdUZ7stEWFQ2WkfXDcSPJLUBGtX8znw","at":"2026-09-20T00:14:38.000Z","from":"Gato-do-Mato","fromAddress":"8deJ9xeUvXSJwicYptA9mHsU2rN2pDx37KWzkDkEXhU6","sol":0.002944002,"fromTigrino":false},{"id":"cmu8y8sad000204jr7g9jw7y9","tx":"5vL2rm57oLJCKKJYfRik2UrU68KtWiUC7DCt7umwcCooiT1VfwLCsqBjkA9VbJZxBM56yJ1p39Mwgkzt5kvAE9sa","at":"2026-09-19T22:18:40.000Z","from":"Leopardus Tilcayo","fromAddress":"AjygC8gewVhtDD36BLjbMaDUPC2VSMsa3gHrXdYYh36M","sol":15.352976611,"fromTigrino":true},{"id":"cmu8vd155000204jmm33iod28","tx":"4UTTepcV2KCqKGFvRnmP9uzaFqSw6SLN3NWQvV2DY1ZUSf1XjgjztEUymkLEEPf6QVSzarxZri4qfwcVG7wLH4vi","at":"2026-09-19T20:58:01.000Z","from":"Leopardus Tilcayo","fromAddress":"AjygC8gewVhtDD36BLjbMaDUPC2VSMsa3gHrXdYYh36M","sol":59.096522186,"fromTigrino":true},{"id":"cmu8r0w51000204i34hq9celt","tx":"2G5gn4SgE6JxAWBXBDZ19yVTTHYZDkKiWUsd6okcC9T67f6ohnvbHaiScvF8ya9BQXTUZRNfUy4xCeipb8vs1H4T","at":"2026-09-19T18:56:37.000Z","from":"Leopardus Tilcayo","fromAddress":"AjygC8gewVhtDD36BLjbMaDUPC2VSMsa3gHrXdYYh36M","sol":2.257861092,"fromTigrino":true},{"id":"cmu8q1sud000204jcqnmb5occ","tx":"4Qx3UuKHPjA9ifBZPWfp3MyQfNt8SxrTVcZ5mvhS7RNsGsaaUaxKYjPK74D38zYA5e7N1Ld1GqdayhtSaenx2ZET","at":"2026-09-19T18:29:20.000Z","from":"Leopardus Tilcayo","fromAddress":"AjygC8gewVhtDD36BLjbMaDUPC2VSMsa3gHrXdYYh36M","sol":0.010208002,"fromTigrino":true},{"id":"cmu8q1hdp000404l57ybcs6hb","tx":"pS4RkhB6JdfWE9GCR8tcyduzRPE7o81LzLu4cLBf9BM6bRAEt2g2iYsYrE6yqwVyovzWiCTAr6jD4fBod3anacZ","at":"2026-09-19T18:29:03.000Z","from":"Leopardus Tilcayo","fromAddress":"AjygC8gewVhtDD36BLjbMaDUPC2VSMsa3gHrXdYYh36M","sol":7.045763022,"fromTigrino":true},{"id":"cmu8nxg3g000c04jmt8lhsm05","tx":"26TRBYVxgbAv8rAxM7drBCrCGeevMKQzZiF8NYDY4EUzNwVo3YTQ2KSJJp51Fu4vAioHeD3tWQifJRE2d62AUKX9","at":"2026-09-19T17:29:56.000Z","from":"Leopardus Tilcayo","fromAddress":"AjygC8gewVhtDD36BLjbMaDUPC2VSMsa3gHrXdYYh36M","sol":0.001216719,"fromTigrino":true},{"id":"cmu8nx9b4000904jmdavbo75q","tx":"4yGqeFv5WrmKRsMREKHQSvizmZas5Y8ffHSgGwaqA9h4KS8dg1vDFib9eESN5wsG8gBd5BZD4cNj2NHcEqiBMTaD","at":"2026-09-19T17:29:48.000Z","from":"Leopardus Tilcayo","fromAddress":"AjygC8gewVhtDD36BLjbMaDUPC2VSMsa3gHrXdYYh36M","sol":6.568590544,"fromTigrino":true},{"id":"cmu8mjytk000204jmvsgom129","tx":"5rvvaptzCb6cisWpknMjMywYAzMWTmpGdyADFinb6aBmsjEhYvbLx1p5JbCxJxAt2SkboK8YwUY4hWwgb1EsL18y","at":"2026-09-19T16:51:28.000Z","from":"Leopardus Tilcayo","fromAddress":"AjygC8gewVhtDD36BLjbMaDUPC2VSMsa3gHrXdYYh36M","sol":5.127396094,"fromTigrino":true},{"id":"cmu8kapvh000104jmgqfdupz3","tx":"oDSGSJak11fDwHQLaXMbrTnQFCkXBK5jSwkTTnkCSPW5HYdsMJGsyUYJhaUFhGvuM16pnLNm8Sy2nWY69AtE2aS","at":"2026-09-19T15:48:17.000Z","from":"Leopardus Tilcayo","fromAddress":"AjygC8gewVhtDD36BLjbMaDUPC2VSMsa3gHrXdYYh36M","sol":26.052506424,"fromTigrino":true}],"fetchedAt":"2026-09-20T15:23:54.828Z"}}],"$L26"]}]}]\n1c:["$","section",null,{"id":"coin","className":"mx-auto max-w-5xl scroll-mt-16 px-5 py-12 sm:py-16","children":[["$","div",null,{"className":"mb-10 border-t border-sand/15 pt-6 sm:mb-14","children":[["$","p",null,{"className":"font-mono text-xs uppercase tracking-[0.25em] text-amber","children":["05"," ",["$","span",null,{"className":"text-muted","children":"/"}]," ","The coin"]}],["$","h2",null,{"className":"serif mt-3 max-w-3xl text-3xl font-medium leading-[1.05] text-sand sm:text-5xl","children":"You trade. He eats. Nobody has to be trusted."}],["$","p",null,{"className":"mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg","children":"A memecoin with one unusual property: the person who made it can’t get paid. Fees are routed on-chain to a sanctuary that cares for Tigrino and a thousand other rescued animals, and the route is locked."}]]}],["$","div",null,{"className":"grid gap-10 lg:grid-cols-[1.1fr_0.9fr]","children":[["$","div",null,{"className":"min-w-0","children":[["$","span",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted ","children":"Contract · Robinhood Chain"}],["$","div",null,{"className":"mt-2","children":["$","$L27",null,{"address":"0xComingSoon"}]}],["$","dl",null,{"className":"mt-8 grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4","children":[["$","div","Fee to sanctuary",{"className":"border-t border-sand/10 pt-3","children":[["$","dt",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted","children":"Fee to sanctuary"}],["$","dd",null,{"className":"serif mt-1 text-3xl text-sand","children":"100%"}]]}],["$","div","Creator share",{"className":"border-t border-sand/10 pt-3","children":[["$","dt",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted","children":"Creator share"}],["$","dd",null,{"className":"serif mt-1 text-3xl text-sand","children":"0%"}]]}],["$","div","Creator holds",{"className":"border-t border-sand/10 pt-3","children":[["$","dt",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted","children":"Creator holds"}],["$","dd",null,{"className":"serif mt-1 text-3xl text-sand","children":"0"}]]}],["$","div","Routing",{"className":"border-t border-sand/10 pt-3","children":[["$","dt",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted","children":"Routing"}],["$","dd",null,{"className":"serif mt-1 text-3xl text-sand","children":"Locked"}]]}]]}],["$","div",null,{"className":"mt-8 flex flex-wrap gap-2","children":[["$","a",null,{"href":"https://app.uniswap.org/swap?chain=robinhood&inputCurrency=NATIVE&outputCurrency=0xComingSoon","target":"_blank","rel":"noopener noreferrer","className":"inline-flex items-center justify-center rounded-full bg-amber px-5 py-2.5 text-sm font-semibold text-[#1a1408] transition hover:bg-amber-soft","children":"Buy on Uniswap"}],["$","a",null,{"href":"https://dexscreener.com/robinhood/0xComingSoon","target":"_blank","rel":"noopener noreferrer","className":"inline-flex items-center justify-center rounded-full border border-sand/25 px-5 py-2.5 text-sm font-semibold text-sand transition hover:border-sand/60 hover:bg-white/5","children":"DEX Screener"}],["$","a",null,{"href":"https://robinhoodchain.blockscout.com/token/0xComingSoon","target":"_blank","rel":"noopener noreferrer","className":"inline-flex items-center justify-center rounded-full border border-sand/25 px-5 py-2.5 text-sm font-semibold text-sand transition hover:border-sand/60 hover:bg-white/5","children":"Explorer"}],[]]}]]}],["$","div",null,{"className":"min-w-0 space-y-6 text-sm leading-relaxed text-muted","children":["$L28","$L29","$L2a"]}]]}]]}]\n1d:["$","section",null,{"id":"faq","className":"mx-auto max-w-5xl scroll-mt-16 px-5 py-12 sm:py-16","children":[["$","div",null,{"className":"mb-10 border-t border-sand/15 pt-6 sm:mb-14","children":[["$","p",null,{"className":"font-mono text-xs uppercase tracking-[0.25em] text-amber","children":["06"," ",["$","span",null,{"className":"text-muted","children":"/"}]," ","Questions"]}],["$","h2",null,{"className":"serif mt-3 max-w-3xl text-3xl font-medium leading-[1.05] text-sand sm:text-5xl","children":"Short answers."}],"$undefined"]}],["$","div",null,{"className":"divide-y divide-sand/10 border-y border-sand/15","children":[["$","details","Who is Tigrino?",{"className":"group py-4","children":[["$","summary",null,{"className":"flex cursor-pointer items-center justify-between gap-4 text-left","children":[["$","span",null,{"className":"serif text-xl text-sand sm:text-2xl","children":"Who is Tigrino?"}],["$","span",null,{"className":"font-mono text-amber transition group-open:rotate-45","children":"+"}]]}],["$","p",null,{"className":"mt-3 max-w-3xl text-base leading-relaxed text-muted","children":"A male wild cat, about 10 years old and 3 lbs, living at La Senda Verde Wildlife Sanctuary in Bolivia\'s Yungas since 2017. In September 2026 scientists confirmed he belongs to Leopardus tilcayo, a species never described before. He is the only known individual."}]]}],["$","details","What is Leopardus tilcayo?",{"className":"group py-4","children":[["$","summary",null,{"className":"flex cursor-pointer items-center justify-between gap-4 text-left","children":[["$","span",null,{"className":"serif text-xl text-sand sm:text-2xl","children":"What is Leopardus tilcayo?"}],["$","span",null,{"className":"font-mono text-amber transition group-open:rotate-45","children":"+"}]]}],["$","p",null,{"className":"mt-3 max-w-3xl text-base leading-relaxed text-muted","children":"A small wild tiger cat species from Bolivia\'s Yungas cloud forest, described on September 17, 2026 in Current Biology and announced by National Geographic. The first new living cat species named since the pampas cat in 1923."}]]}],["$","details","Tigrino vs tilcayo?",{"className":"group py-4","children":[["$","summary",null,{"className":"flex cursor-pointer items-center justify-between gap-4 text-left","children":[["$","span",null,{"className":"serif text-xl text-sand sm:text-2xl","children":"Tigrino vs tilcayo?"}],["$","span",null,{"className":"font-mono text-amber transition group-open:rotate-45","children":"+"}]]}],["$","p",null,{"className":"mt-3 max-w-3xl text-base leading-relaxed text-muted","children":"Tigrino is the cat\'s name, given by sanctuary staff in 2017. Tilcayo is the species name, from the word Yungas locals have always used for the animal. One cat, two names."}]]}],["$","details","How much has been donated?",{"className":"group py-4","children":[["$","summary",null,{"className":"flex cursor-pointer items-center justify-between gap-4 text-left","children":[["$","span",null,{"className":"serif text-xl text-sand sm:text-2xl","children":"How much has been donated?"}],["$","span",null,{"className":"font-mono text-amber transition group-open:rotate-45","children":"+"}]]}],["$","p",null,{"className":"mt-3 max-w-3xl text-base leading-relaxed text-muted","children":"Over $100,000 within 48 hours, to La Senda Verde Animal Refuge Inc, the sanctuary\'s US 501(c)(3). In their words it goes to “Tigrino and more than 1,000 rescued animals.” The counter on this page reads directly from donate.gg. The sanctuary confirmed receipt on X, in a photo, and on video."}]]}],["$","details","What is $TIGRINO?",{"className":"group py-4","children":[["$","summary",null,{"className":"flex cursor-pointer items-center justify-between gap-4 text-left","children":[["$","span",null,{"className":"serif text-xl text-sand sm:text-2xl","children":"What is $TIGRINO?"}],"$L2b"]}],"$L2c"]}],"$L2d"]}]]}]\n1e:["$","section",null,{"className":"mx-auto max-w-5xl px-5 pb-16 pt-4","children":[["$","div",null,{"className":"flex flex-wrap items-end justify-between gap-6 border-t border-sand/15 pt-6","children":[["$","div",null,{"children":[["$","span",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted ","children":"07 / The archive"}],["$","p",null,{"className":"serif mt-3 text-3xl text-sand sm:text-4xl","children":"Thirty-one memes. One cat. Free to use."}]]}],["$","$L14",null,{"href":"/memes","className":"inline-flex items-center justify-center rounded-full border border-sand/25 px-5 py-2.5 text-sm font-semibold text-sand transition hover:border-sand/60 hover:bg-white/5","children":"Open the meme wall"}]]}],["$","div",null,{"className":"mt-6 grid grid-cols-4 gap-2 sm:grid-cols-8","children":[["$","$L14","13",{"href":"/memes","children":["$","$L20",null,{"src":"/gallery/13.webp","alt":"Tigrino meme","width":400,"height":400,"className":"aspect-square w-full rounded-lg border border-white/10 object-cover transition hover:opacity-80","sizes":"12vw"}]}],["$","$L14","07",{"href":"/memes","children":["$","$L20",null,{"src":"/gallery/07.webp","alt":"Tigrino meme","width":400,"height":400,"className":"aspect-square w-full rounded-lg border border-white/10 object-cover transition hover:opacity-80","sizes":"12vw"}]}],["$","$L14","18",{"href":"/memes","children":["$","$L20",null,{"src":"/gallery/18.webp","alt":"Tigrino meme","width":400,"height":400,"className":"aspect-square w-full rounded-lg border border-white/10 object-cover transition hover:opacity-80","sizes":"12vw"}]}],["$","$L14","02",{"href":"/memes","children":["$","$L20",null,{"src":"/gallery/02.webp","alt":"Tigrino meme","width":400,"height":400,"className":"aspect-square w-full rounded-lg border border-white/10 object-cover transition hover:opacity-80","sizes":"12vw"}]}],["$","$L14","12",{"href":"/memes","children":["$","$L20",null,{"src":"/gallery/12.webp","alt":"Tigrino meme","width":400,"height":400,"className":"aspect-square w-full rounded-lg border border-white/10 object-cover transition hover:opacity-80","sizes":"12vw"}]}],["$","$L14","15",{"href":"/memes","children":["$","$L20",null,{"src":"/gallery/15.webp","alt":"Tigrino meme","width":400,"height":400,"className":"aspect-square w-full rounded-lg border border-white/10 object-cover transition hover:opacity-80","sizes":"12vw"}]}],["$","$L14","19",{"href":"/memes","children":["$","$L20",null,{"src":"/gallery/19.webp","alt":"Tigrino meme","width":400,"height":400,"className":"aspect-square w-full rounded-lg border border-white/10 object-cover transition hover:opacity-80","sizes":"12vw"}]}],["$","$L14","27",{"href":"/memes","children":["$","$L20",null,{"src":"/gallery/27.webp","alt":"Tigrino meme","width":400,"height":400,"className":"aspect-square w-full rounded-lg border border-white/10 object-cover transition hover:opacity-80","sizes":"12vw"}]}]]}]]}]\n1f:["$","footer",null,{"className":"border-t border-sand/15","children":["$","div",null,{"className":"mx-auto max-w-5xl px-5 py-10","children":[["$","div",null,{"className":"flex flex-wrap items-baseline justify-between gap-6","children":[["$","p",null,{"className":"serif text-2xl text-sand","children":["Tigrino is his name. Tilcayo is the species. ",["$","span",null,{"className":"text-amber","children":"$$TIGRINO"}]," is the joke that feeds him."]}],["$","div",null,{"className":"flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted","children":[[[],[],[],[],[],[]],[],[],[]]}]]}],["$","p",null,{"className":"mt-8 max-w-4xl text-xs leading-relaxed text-muted","children":"Community fan site. Not affiliated with La Senda Verde, National Geographic, Uniswap or donate.gg. $TIGRINO is a memecoin; its only link to the sanctuary is the on-chain fee routing described on this site. Not financial advice. Donation figures are read live from donate.gg at current ETH price, unaudited. Real photos and video of Tigrino belong to La Senda Verde."}]]}]}]\n',
+      ]);
+    </script>
+    <script>
+      self.__next_f.push([
+        1,
+        '21:["$","span",null,{"className":"absolute -left-[1.85rem] top-2 h-2.5 w-2.5 rounded-full bg-amber sm:-left-[2.85rem]"}]\n22:["$","p",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-amber","children":"19 Sep 2026"}]\n23:["$","p",null,{"className":"serif mt-1 max-w-2xl text-xl leading-snug text-sand sm:text-2xl","children":"$$100,000 crossed. His keeper prints a sign. “Tigrino” trends on X by name."}]\n24:["$","div",null,{"className":"mt-12 grid gap-px overflow-hidden rounded-2xl border border-sand/15 bg-sand/15 sm:grid-cols-2","children":[["$","div",null,{"className":"bg-background p-6","children":[["$","span",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted ","children":"His name"}],["$","p",null,{"className":"serif mt-2 text-4xl text-sand","children":"Tigrino"}],["$","p",null,{"className":"mt-2 text-sm text-muted","children":"Given by the sanctuary in 2017, years before anyone knew he mattered."}]]}],["$","div",null,{"className":"bg-background p-6","children":[["$","span",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted ","children":"His species"}],["$","p",null,{"className":"serif mt-2 text-4xl text-sand","children":"Tilcayo"}],["$","p",null,{"className":"mt-2 text-sm text-muted","children":"From the word Yungas locals have always used. Nobody knows what it means."}]]}]]}]\n26:["$","p",null,{"className":"mt-8 text-sm text-muted","children":["Source: ",["$","a",null,{"className":"underline hover:text-sand","href":"https://www.donate.gg/charities/la-senda-verde-animal-refuge-inc","target":"_blank","rel":"noopener noreferrer","children":"donate.gg · La Senda Verde Animal Refuge Inc"}]," · EIN 47-2415812 ·"," ",["$","a",null,{"className":"underline hover:text-sand","href":"https://robinhoodchain.blockscout.com/address/AjygC8gewVhtDD36BLjbMaDUPC2VSMsa3gHrXdYYh36M","target":"_blank","rel":"noopener noreferrer","children":"fee wallet on Blockscout"}]]}]\n28:["$","div",null,{"children":[["$","span",null,{"className":"font-mono text-[11px] uppercase tracking-[0.2em] text-muted ","children":"How it moves"}],["$","ol",null,{"className":"mt-3 space-y-2","children":[["$","li","You buy or sell. Uniswap charges its usual trading fee.",{"className":"flex gap-3","children":[["$","span",null,{"className":"font-mono text-amber","children":1}],["$","span",null,{"children":"You buy or sell. Uniswap charges its usual trading fee."}]]}],["$","li","The creator\'s cut is redirected: 100% charity, 0% creator, locked at launch.",{"className":"flex gap-3","children":[["$","span",null,{"className":"font-mono text-amber","children":2}],["$","span",null,{"children":"The creator\'s cut is redirected: 100% charity, 0% creator, locked at launch."}]]}],["$","li","donate.gg settles it to the sanctuary\'s 501(c)(3) and publishes each transfer.",{"className":"flex gap-3","children":[["$","span",null,{"className":"font-mono text-amber","children":3}],["$","span",null,{"children":"donate.gg settles it to the sanctuary\'s 501(c)(3) and publishes each transfer."}]]}],["$","li","The ledger above updates. The sanctuary needs no wallet and no sign-up.",{"className":"flex gap-3","children":[["$","span",null,{"className":"font-mono text-amber","children":4}],["$","span",null,{"children":"The ledger above updates. The sanctuary needs no wallet and no sign-up."}]]}]]}]]}]\n29:["$","div",null,{"className":"border-l-2 border-amber pl-4 text-amber-soft","children":["It’s a memecoin. No team, no roadmap, and the price can go to zero. Buy it because the joke is good and the cause is real. If you only want to help the cat, ",["$","a",null,{"className":"underline","href":"https://sendaverde.org","target":"_blank","rel":"noopener noreferrer","children":"give directly"}],"."]}]\n2a:["$","p",null,{"children":["Verify: ",["$","a",null,{"className":"underline hover:text-sand","href":"https://robinhoodchain.blockscout.com/token/0xComingSoon","target":"_blank","rel":"noopener noreferrer","children":"token on Blockscout"}]," · ",["$","a",null,{"className":"underline hover:text-sand","href":"https://www.donate.gg/charities/la-senda-verde-animal-refuge-inc","target":"_blank","rel":"noopener noreferrer","children":"ledger on donate.gg"}]," · Community Notes on the mascot’s viral post: “the sanctuary confirmed Tigrino’s story, the new species, and over $100k raised.”"]}]\n2b:["$","span",null,{"className":"font-mono text-amber transition group-open:rotate-45","children":"+"}]\n2c:["$","p",null,{"className":"mt-3 max-w-3xl text-base leading-relaxed text-muted","children":"A community-run memecoin on Robinhood Chain, tradeable on Uniswap as of September 18, 2026. 100% of its creator fees are locked to the sanctuary; the creator receives 0% and holds no tokens. No team, no roadmap, no affiliation with National Geographic or the study authors. The price can go to zero."}]\n2d:["$","details","Is this the sanctuary\'s website?",{"className":"group py-4","children":[["$","summary",null,{"className":"flex cursor-pointer items-center justify-between gap-4 text-left","children":[["$","span",null,{"className":"serif text-xl text-sand sm:text-2xl","children":"Is this the sanctuary\'s website?"}],["$","span",null,{"className":"font-mono text-amber transition group-open:rotate-45","children":"+"}]]}],["$","p",null,{"className":"mt-3 max-w-3xl text-base leading-relaxed text-muted","children":"No. This is a community site. The sanctuary is sendaverde.org and @La_Senda_Verde on X. They know about this project and have publicly acknowledged it, but they don\'t run it."}]]}]\n',
+      ]);
+    </script>
+  </body>
 </html>
