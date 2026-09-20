@@ -1268,8 +1268,7 @@ Read more: https://nextjs.org/docs/messages/next-image-unconfigured-localpattern
           { value: "E871", enumerable: !1, configurable: !0 }
         );
       let l = (0, n.findClosestQuality)(a, e);
-      return `${e.path}?url=${encodeURIComponent(t)}&w=${r}&q=${l}${
-        t.startsWith("/") && s ? `&dpl=${s}` : ""
+      return `${(t)
       }`;
     }
     o.__next_img_default = !0;
