@@ -24,7 +24,7 @@
         let [a, s] = (0, r.useState)(e);
         (0, r.useEffect)(() => {
           let t = () =>
-            fetch("/api/donations")
+            fetch("/donations.json")
               .then((e) => e.json())
               .then(s)
               .catch(() => {});
